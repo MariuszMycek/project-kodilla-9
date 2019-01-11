@@ -1,0 +1,21 @@
+@mixin breakpoint($point) {
+    @if $point == mobile {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+    @else if $point == mobile_landscape {
+        @media (max-width: 767px) and (orientation: landscape) {
+            @content;
+        }
+    }
+    @else if $point == tablet {
+        @media (max-width: 1199px) {
+            @content;
+        }
+    }
+}
+
+@mixin transition($element: all, $duration: 0.1s, $type: ease-out) {
+    transition: $element $duration $type;
+}

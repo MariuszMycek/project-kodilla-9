@@ -1,0 +1,25 @@
+.btn {
+    font-weight: $font-light;
+    color: $white;
+    font-size: $btn-font-size;
+    padding: 11px 20px;
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+    @include transition;
+    user-select: none;
+}
+.btn--primary {
+    background-color: $btn-primary;
+    &:hover {
+        background-color: $btn-primary-hover;
+    }
+}.btn--secondary {
+    background-color: $btn-secondary;
+    &:hover {
+        background-color: $btn-secondary-hover;
+    }
+}
+.btn--disabled {
+    background-color: $btn-disabled;
+}

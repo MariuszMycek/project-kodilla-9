@@ -1,0 +1,18 @@
+// Container for elements with full page width for proper placing next to sidebar
+.container-full-width {
+    width: calc(100% - 188px); // page width - sidebar width
+    margin-left: 188px;
+}
+// Main container for main content 
+.container {
+    width: 100%;
+    max-width: 1056px;
+    background-color: $white;
+    margin: 0 auto;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+// Smaller container used within .container to limit width of main content 
+.container-inner {
+    width: 100%;
+    max-width: 684px;
+}

@@ -1,0 +1,125 @@
+.general-statistic__date-filter {
+    height: 110px;
+    border-bottom: $border-grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.date-filter__date-period {
+    display: flex;
+    align-items: center;
+    margin-left: 13px;
+    width: 325px;
+    height: 40px;
+    border: $border-grey;
+    border-radius: 3px;
+    &:hover {
+        border: 1px solid $paragraph-color;
+    }
+}
+.date-period__from {
+    color: $paragraph-color;
+    width: 45.4%;
+    padding: 6px 0 6px 16px;
+    font-size: $paragraph-font-size;
+}
+.date-period__to {
+    @extend .date-period__from;
+    border-left: $border-grey;
+}
+.date-period__icon {
+    cursor: pointer;
+    font-size: 13px;
+    padding: 3px;
+    @include transition;
+        &:hover {
+        color: $black;
+    }
+}
+.date-filter__button {
+    padding: 11px 13px 9px 13px;
+    margin-left: 13px;
+    &:hover i {
+        color: $white;
+    }
+    i {
+        color: $white;
+        font-size: 15px;
+    }
+}
+.general-statistic__statistic-data {
+    display: flex;
+    justify-content: center;
+}
+.statistic-data__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.statistic-data__statistic-data-in-table {
+    margin-top: 19px;
+    border-collapse: collapse;
+    width: 45.5%;
+    tr {
+        border-bottom: $border-grey;
+        th {
+            text-align: left;
+            padding-top: 20px;
+            padding-bottom: 8px;
+        }
+        td {
+            text-align: right;
+            padding-top: 20px;
+            padding-bottom: 8px;
+        }
+    }
+}
+
+.general-statistic__earnings-chart {
+    display: flex;
+    justify-content: center;
+    margin-top: 72px;
+}
+
+.earnings-chart__color-tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.color-tabs {
+    color: $header-font;
+    font-size: $header-font-size;
+    margin: 20px 29px 0 13px;
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+    &:hover {
+        background-color: $color-tabs-bg;
+    }
+}
+.color-tabs--pressed {
+    background-color: $color-tabs-bg;
+}
+.color-tabs--regular {
+    background-color: none;
+}
+.color-tabs__circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+.color-tabs__circle--turquoise {
+    background-color: $color-tabs-turquoise;
+}
+.color-tabs__circle--orange {
+    background-color: $color-tabs-orange;
+}
+.color-tabs__circle--green {
+    background-color: $color-tabs-green;
+}
+.earnings-chart__graph {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 67px 0 55px 3px;
+}

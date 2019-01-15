@@ -1,0 +1,104 @@
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    background-color: $white;
+    border: $border-grey;
+    color: $top-bar-content;
+}
+.top-bar__wallet {
+    display: flex;
+    align-items: center;
+    padding-left: 17px;
+    padding-right: 13px;
+    border-left: $border-grey;
+    cursor: pointer;
+    @include transition;
+    &:hover {
+        background-color: $body-bg;
+        i {
+            color: $black;
+        }
+    }
+}
+.wallet__amount {
+    padding-left: 15px;
+    padding-right: 18px;
+    font-size: 20px;
+    font-weight: $font-medium;
+}
+.wallet__wallet-icon {
+    font-size: 18px;
+}
+.wallet__arrow-down-icon {
+    font-size: 12px;
+    padding-right: 4px;
+}
+.top-bar__notification {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 20px;
+    border-left: $border-grey;
+    cursor: pointer;
+    @include transition;
+    &:hover {
+        background-color: $body-bg;
+        i {
+            color: $black;
+        }
+    }
+}
+.notification__icon {
+    font-size: 17px;
+}
+.notification__indicator {
+    border-radius: 50%;
+    background-color: $btn-secondary;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 17px;
+    left: 30px;
+}
+.top-bar__profile {
+    display: flex;
+    align-items: center;
+    padding: 0 19px;
+    border-left: $border-grey;
+    @include transition;
+    &:hover {
+        background-color: $body-bg;
+        i {
+            color: $black;
+        }
+    }
+}
+.profile__icon {
+    font-size: 17px;
+}
+.profile__name {
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+}
+.top-bar__quit {
+    padding-left: 21px;
+    padding-right: 19px;
+    display: flex;
+    align-items: center;
+    border-left: $border-grey;
+    cursor: pointer;
+    @include transition;
+    &:hover {
+        background-color: $body-bg;
+        i {
+            color: $black;
+        }
+    }
+}
+.quit__icon {
+    font-size: 19px;
+}

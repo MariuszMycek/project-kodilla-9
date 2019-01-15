@@ -1,0 +1,30 @@
+.table-two-columns-with-two-icons {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    tr {
+        height: 58px;
+        border-top: $border-grey;
+        border-bottom: $border-grey;
+        @include transition;
+        &:hover {
+            background-color: #f1f3f3;
+            i {
+                visibility: visible;
+            }
+        }
+    }
+    td {
+        padding-left: 14px;
+        width: 43%;
+        i {         @include transition(color);
+            cursor: pointer;
+            padding: 8px;
+            margin-left: 5px;
+            visibility: hidden;
+            &:nth-child(2):hover {
+                color: $black;
+            }
+        }
+    }
+}

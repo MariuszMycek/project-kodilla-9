@@ -15,7 +15,31 @@
         }
     }
 }
+@mixin no-highlight {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
 
 @mixin transition($element: all, $duration: 0.1s, $type: ease-out) {
     transition: $element $duration $type;
+}
+@mixin basic-header-text-style {
+    font-size: $header-font-size;
+    color: $header-font;
+    margin: 0;
+}
+@mixin basic-link-style {
+    font-weight: $font-light;
+    color: $link-color;
+    text-decoration: none;
+    @include transition;
+    &:hover {
+        color: $link-hover;
+    }
 }

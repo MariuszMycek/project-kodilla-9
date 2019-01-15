@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: $brand-font;
+    background-color: $body-bg;
+    margin-top: 78px;
+}
+section {
+    margin: 18px 0 22px;
+}
+p {
+    color: $paragraph-color;
+    font-size: $paragraph-font-size;
+}
+

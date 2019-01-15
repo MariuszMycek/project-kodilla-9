@@ -4,191 +4,41 @@
 @import "mixins";
 @import "normalize";
 @import "layout";
+@import "general-styles";
 
 /* Components */
+@import "components/containers";
+@import "components/headers";
+@import "components/buttons";
+@import "components/links";
+@import "components/icons";
+@import "components/tables";
+
 // @import "components/form_field";
 
 /* Sections */
-// @import "sections/registration_form";
+@import "sections/sidebar";
+@import "sections/top-bar";
 
 /* Pages / Views */
-// @import "pages/registration";
-body {
-    font-family: $brand-font;
-    box-sizing: border-box;
-    background-color: $body-bg;
-    margin-top: 78px;
-}
+@import "pages/general-statistic";
+@import "pages/links-page";
 
-h4 {
-    font-size: $header-font-size;
-    color: $header-font;
-}
-.header--page {
-    font-weight: $font-medium;
-    text-transform: uppercase;
-}
-.header--section {
-    font-weight: $font-bold;
-}
-.header--line {
-    @extend .header--section;
-}
-p {
-    color: $paragraph-color;
-    font-size: $paragraph-font-size;
-}
-a {
-    color: $link-color;
-    text-decoration: none;
-    &:hover {
-        color: $link-hover;
-    }
-}
-.link--lg {
-    font-size: 17px;
-}
-.link--sm {
-    font-size: 13px;
-}
-i {
-    color: $link-color;
-    &:hover {
-        color: $link-hover;
-        cursor: pointer;
-    }
-}
-section {
-    margin: 18px 0 18px;
-}
-.container {
-    width: 100%;
-    max-width: 1074px;
-    background-color: $white;
-    margin: 0 auto;
-}
-.btn {
-    font-weight: $font-light;
-    color: $white;
-    font-size: $btn-font-size;
-    padding: 11px 20px;
-    border-radius: 5px;
-    display: inline-block;
-    cursor: pointer;
-    @include transition;
-    user-select: none;
-}
-.btn--primary {
-    background-color: $btn-primary;
-    &:hover {
-        background-color: $btn-primary-hover;
-    }
-}.btn--secondary {
-    background-color: $btn-secondary;
-    &:hover {
-        background-color: $btn-secondary-hover;
-    }
-}
-.btn--disabled {
-    background-color: $btn-disabled;
-}
-.icon {
-    fill: $icon-color;
-    @include transition;
-}
-.sidebar {
-    width: 188px;
-    height: 100vh;
-    background-color: $sidebar-bg;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-.top-bar {
-    display: flex;
-    justify-content: flex-end;
-    height: 60px;
-    width: calc(100vw - 188px);
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: $white;
-    border: $border-grey;
-    color: $top-bar-content;
-}
-.top-bar__wallet {
-    display: flex;
-    align-items: center;
-        padding-left: 17px;
-    padding-right: 13px;
-    border-left: $border-grey;
-    &:hover .wallet__icon--arrow-down, &:hover .wallet__icon--wallet {
-        fill: $black;
-    }
-}
-.wallet__amount {
-    padding-left: 15px;
-    padding-right: 14px;
-    font-size: 20px;
-    font-weight: $font-medium;
-}
-.wallet__icon--wallet {
-    width: 17px;
-}
-.wallet__icon--arrow-down {
-    width: 11px;
-    cursor: pointer;
-    padding: 5px;
-    
-}
-.top-bar__notification {
-    display: flex;
-    position: relative;
-    padding: 0 20px;
-    border-left: $border-grey;
-    cursor: pointer;
-    &:hover .notification__icon{
-        fill: $black;
-    }
-}
-.notification__icon {
-    width: 18px;
-}
-.notification__indicator {
-    border-radius: 50%;
-    background-color: $btn-secondary;
-    width: 8px;
-    height: 8px;
-    position: absolute;
-    top: 18px;
-    left: 30px;
-}
-.top-bar__profile {
-    display: flex;
-    padding: 0 18px;
-    border-left: $border-grey;
-    &:hover .profile__icon{
-        fill: $black;
-    }
-}
-.profile__icon {
-    width: 19px;
-}
-.profile__name {
-    display: flex;
-    align-items: center;
-    padding-left: 12px;
-}
-.top-bar__quit {
-    padding-left: 20px;
-    padding-right: 18px;
-    display: flex;
-    border-left: $border-grey;
-    cursor: pointer;
-    &:hover .quit__icon{
-        fill: $black;
-    }
-}
-.quit__icon {
-    width: 19px;
-}
+// @import "pages/registration";,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

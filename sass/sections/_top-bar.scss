@@ -1,13 +1,26 @@
 .top-bar {
+    position: fixed;
     display: flex;
     justify-content: flex-end;
     height: 60px;
-    position: fixed;
     top: 0;
     background-color: $white;
     border: $border-grey;
     color: $top-bar-content;
+    padding-right: 0;
+    @include breakpoint(sm) {
+        padding-left: 18px;
+        padding-right: 18px;
+        position: static;
+        flex-wrap: wrap;
+        left: 0;
+        justify-content: flex-start;
+        width: 100%;
+        height: 160px;
+        z-index: 99;
+    }
 }
+
 .top-bar__wallet {
     display: flex;
     align-items: center;
@@ -16,10 +29,23 @@
     border-left: $border-grey;
     cursor: pointer;
     @include transition;
+    @include breakpoint(sm) {
+        width: 100%;
+        border-left: none;
+        border-bottom: $border-grey;
+        padding-left: 18px;
+    }
     &:hover {
-        background-color: $body-bg;
-        i {
-            color: $black;
+        @include breakpoint(xl) {
+            @include hover-and-active-for-top-bar-tabs;
+        }
+    }
+    &:active {
+        @include breakpoint(sm) {
+            @include hover-and-active-for-top-bar-tabs;
+        }
+        @include breakpoint(md) {
+            @include hover-and-active-for-top-bar-tabs;
         }
     }
 }
@@ -28,9 +54,15 @@
     padding-right: 18px;
     font-size: 20px;
     font-weight: $font-medium;
+    @include breakpoint(sm) {
+        padding-left: 0;
+    }
 }
 .wallet__wallet-icon {
     font-size: 18px;
+    @include breakpoint(sm) {
+        margin-right: 34px;
+    }
 }
 .wallet__arrow-down-icon {
     font-size: 12px;
@@ -44,10 +76,23 @@
     border-left: $border-grey;
     cursor: pointer;
     @include transition;
+    @include breakpoint(sm) {
+        width: 100%;
+        border-bottom: $border-grey;
+        padding-left: 18px;
+        border-left: none;
+    }
     &:hover {
-        background-color: $body-bg;
-        i {
-            color: $black;
+        @include breakpoint(xl) {
+            @include hover-and-active-for-top-bar-tabs;
+        }
+    }
+    &:active {
+        @include breakpoint(sm) {
+            @include hover-and-active-for-top-bar-tabs;
+        }
+        @include breakpoint(md) {
+            @include hover-and-active-for-top-bar-tabs;
         }
     }
 }
@@ -62,6 +107,10 @@
     position: absolute;
     top: 17px;
     left: 30px;
+    @include breakpoint (sm) {
+        top: 5px;
+        left: 27px;
+    }
 }
 .top-bar__profile {
     display: flex;
@@ -69,20 +118,39 @@
     padding: 0 19px;
     border-left: $border-grey;
     @include transition;
+    @include breakpoint(sm) {
+        width: 100%;
+        border-bottom: $border-grey;
+        padding-left: 18px;
+        border-left: none;
+    }
     &:hover {
-        background-color: $body-bg;
-        i {
-            color: $black;
+        @include breakpoint(xl) {
+            @include hover-and-active-for-top-bar-tabs;
+        }
+    }
+    &:active {
+        @include breakpoint(sm) {
+            @include hover-and-active-for-top-bar-tabs;
+        }
+        @include breakpoint(md) {
+            @include hover-and-active-for-top-bar-tabs;
         }
     }
 }
 .profile__icon {
     font-size: 17px;
+    @include breakpoint(sm) {
+        margin-right: 34px;
+    }
 }
 .profile__name {
     display: flex;
     align-items: center;
     padding-left: 12px;
+    @include breakpoint(sm) {
+        padding-left: 0;
+    }
 }
 .top-bar__quit {
     padding-left: 21px;
@@ -92,10 +160,23 @@
     border-left: $border-grey;
     cursor: pointer;
     @include transition;
+    @include breakpoint(sm) {
+        width: 100%;
+        border-bottom: $border-grey;
+        padding-left: 18px;
+        border-left: none;
+    }
     &:hover {
-        background-color: $body-bg;
-        i {
-            color: $black;
+        @include breakpoint(xl) {
+            @include hover-and-active-for-top-bar-tabs;
+        }
+    }
+    &:active {
+        @include breakpoint(sm) {
+            @include hover-and-active-for-top-bar-tabs;
+        }
+        @include breakpoint(md) {
+            @include hover-and-active-for-top-bar-tabs;
         }
     }
 }

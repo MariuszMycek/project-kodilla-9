@@ -1,7 +1,28 @@
 // Container for elements with full page width for proper placing next to sidebar
-.container-full-width {
+.container-fluid {
     width: calc(100% - 188px); // page width - sidebar width
     margin-left: 188px;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include breakpoint(sm) {
+        margin-left: 0;
+        width: 100%;
+        padding: 0;
+    }
+    @include breakpoint (xl) {
+        width: calc(100% - 55px);
+        margin-left: 55px;
+    }
+}
+.container-fluid--short-menu {
+    @include breakpoint (md) {
+        width: calc(100% - 55px);
+        margin-left: 55px;
+    }
+    @include breakpoint (xl) {
+        width: calc(100% - 188px);
+        margin-left: 188px;
+    }
 }
 // Main container for main content 
 .container {
@@ -10,9 +31,18 @@
     background-color: $white;
     margin: 0 auto;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    @include breakpoint(sm) {
+        padding: 0 5px;
+    }
 }
+
 // Smaller container used within .container to limit width of main content 
 .container-inner {
     width: 100%;
-    max-width: 684px;
+    max-width: 714px;
+    margin: 0 auto;
+    padding: 0 15px;
+    @include breakpoint(sm) {
+        padding: 0 5px;
+    }
 }

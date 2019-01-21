@@ -2,46 +2,85 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    width: 188px;
     height: 100vh;
+    width: 188px;
     background-color: $sidebar-bg;
     position: fixed;
     top: 0;
     left: 0;
     color: $sidebar-font-color;
+    @include breakpoint(sm) {
+        z-index: 97;
+        position: static;
+        width: 100%;
+        max-height: calc(100vh - 160px);
+        min-height: 445px;
+    }
+    @include breakpoint(xl) {
+        width: 55px;
+    }
 }
-.sidebar__sidebar-upper-wrapper {
+.sidebar--short {
+    @include breakpoint(md) {
+        width: 55px;
+    }
+    @include breakpoint(xl) {
+        width: 188px;
+    }
+}
+.sidebar-logo-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: calc(100% - 18px);
     height: 60px;
     margin-left: 18px;
-    display: flex;
     align-items: center;
-}
-.sidebar-upper-wrapper__hamburger {
-    padding: 3px;
-    font-size: 21px;
-    color: $sidebar-font-color;
-    margin-right: 17px;
-    margin-top: 2px;
-    cursor: pointer;
-    @include transition;
-    &:hover {
-        color: $white;
+    @include breakpoint(sm) {
+        height: 50px;
+        flex-wrap: wrap;
+        width: calc(100% - 36px);
+        border-bottom: 1px solid $paragraph-color;
+    }
+    @include breakpoint (xl) {
+        visibility: hidden;
     }
 }
+.sidebar-logo-wrapper--hidden {
+    @include breakpoint (md) {
+        visibility: hidden;
+    }
+    @include breakpoint (xl) {
+        visibility: visible;
+    }
+}
+.sidebar__logo {
+    @include breakpoint(sm) {
+        margin-left: 18px;
+        height: 25px;
+        width: auto;
+    }
+}
+
+
 .sidebar__navigation-links {
-    padding: 0;
+    padding-left: 0;
     width: 100%;
-    font-size: $paragraph-font-size;
     list-style: none;
     margin: 0;
     padding-bottom: 24px;
     border-bottom: 1px solid $paragraph-color;
+    overflow: hidden;
+    @include breakpoint(sm) {
+        width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
 }
 .navigation-links__link-tab {
+    font-size: $paragraph-font-size;
     position: relative;
     padding-left: 18px;
     height: 42px;
@@ -49,19 +88,59 @@
     align-items: center;
     cursor: pointer;
     @include transition;
+    @include breakpoint(sm) {
+        border-bottom: 1px solid $paragraph-color;
+        justify-content: flex-start;
+        font-size: 16px;
+        height: 40px;
+    }
     &:hover {
-        background-color: #282828;
-        color: $white;
+        @include breakpoint(xl) {
+            background-color: #282828;
+            color: $white;
+        }
         .link-tab__preceding-rectangle {
-            visibility: visible;
+            @include breakpoint(xl) {
+                visibility: visible;
+            }
         }
     }
-    i {
-        font-size: 16px;
-        margin-right: 12px;
+    &:active {
+        @include breakpoint(sm) {
+            background-color: #282828;
+            color: $white;
+        }
+        @include breakpoint(md) {
+            background-color: #282828;
+            color: $white;
+        }
+        .link-tab__preceding-rectangle {
+            @include breakpoint(md) {
+                visibility: visible;
+            }
+        }
     }
 }
-
+.link-tab__icon {
+    font-size: 16px;
+    margin-right: 12px;
+    
+    @include breakpoint(sm) {
+        font-size: 16px;
+        margin-right: 34px;
+    }
+    @include breakpoint(xl) {
+        padding-right: 25px;
+    }
+}
+.link-tab__icon--short-menu {
+    @include breakpoint(md) {
+        padding-right: 25px;
+    }
+    @include breakpoint(xl) {
+        padding-right: 0;
+    }
+}
 .link-tab__preceding-rectangle {
     visibility: hidden;
     position: absolute;
@@ -71,7 +150,13 @@
     width: 4px;
     background-color: $btn-secondary;
 }
-
+.sidebar__manager-tab {
+    @include breakpoint(sm) {
+        width: 100%;
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+}
 .manager-tab__header {
     font-size: $paragraph-font-size;
     font-weight: $font-medium;
@@ -80,16 +165,63 @@
     margin-top: 26px;
     margin-left: 20px;
     margin-bottom: 15px;
+    @include breakpoint(sm) {
+        margin-top: 14px;
+        font-size: 16px;
+        margin-left: 0;
+    }
+    @include breakpoint (xl) {
+        display: none;
+    }
+}
+.manager-tab__header--hidden {
+    @include breakpoint (md) {
+        display: none;
+    }
+    @include breakpoint (xl) {
+        display: block;
+    }
 }
 .manager-tab-display-wrapper {
     cursor: pointer;
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     align-items: center;
+    @include breakpoint(sm) {
+        padding-bottom: 14px;
+    }
 }
 .manager-tab__manager-avatar {
     margin-left: 20px;
     position: relative;
+    @include breakpoint(sm) {
+        width: 50px;
+        height: 50px;
+        margin-left: 0;
+    }
+    @include breakpoint (xl) {
+        margin-left: 5px;
+        margin-top: 15px;
+        transform: scale(0.6);
+    }
+    img {
+        @include breakpoint(sm) {
+            width: 100%;
+        }
+    }
+}
+.manager-tab__manager-avatar--short-menu {
+    @include breakpoint (md) {
+        margin-left: 5px;
+        margin-top: 15px;
+        transform: scale(0.6);
+    }
+    @include breakpoint (xl) {
+        margin-left: 20px;
+        margin-top: 0;
+        transform: scale(1);
+    }
 }
 .manager-avatar__status-indicator {
     border-radius: 50%;
@@ -99,9 +231,27 @@
     position: absolute;
     top: 0;
     left: 32px;
+    @include breakpoint(sm) {
+        width: 14px;
+        height: 14px;
+    }
 }
 .manager-tab__manager-name {
     color: $link-color;
     font-size: $paragraph-font-size;
     margin-left: 10px;
+    @include breakpoint(sm) {
+        font-size: 14px;
+    }
+    @include breakpoint(xl) {
+        display: none;
+    }
+}
+.manager-tab__manager-name--hidden {
+    @include breakpoint(md) {
+        display: none;
+    }
+    @include breakpoint(xl) {
+        display: block;
+    }
 }

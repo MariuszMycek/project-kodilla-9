@@ -2,29 +2,75 @@
     width: 100%;
     text-align: left;
     border-collapse: collapse;
+    @include breakpoint(sm) {
+    }
     tr {
         height: 58px;
         border-top: $border-grey;
-        border-bottom: $border-grey;
         @include transition;
+        @include breakpoint(sm) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            height: auto;
+        }
+        &:last-child {
+            border-bottom: $border-grey;
+        }
         &:hover {
             background-color: #f1f3f3;
             i {
                 visibility: visible;
             }
         }
+        i {
+            visibility: hidden;
+        }
     }
     td {
         padding-left: 14px;
         width: 43%;
-        i {         @include transition(color);
+        @include breakpoint(sm) {
+            width: 70%;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    td:last-child {
+        @include breakpoint (sm) {
+            
+            position: relative;
+            top: -10px;
+            width: 30%;
+            text-align: right;
+            padding-left: 0;
+        }
+        i {
+            @include transition(color);
             cursor: pointer;
             padding: 8px;
             margin-left: 5px;
-            visibility: hidden;
+            &:nth-child(2):active {
+                @include breakpoint(md) {
+                    color: $black;
+                }
+                @include breakpoint(sm) {
+                    color: $black;
+                }
+            }
             &:nth-child(2):hover {
-                color: $black;
+                @include breakpoint(xl) {
+                    color: $black;
+                }
+            }
+            @include breakpoint (sm) {
+                margin-left: 0;
+                margin-right: 10px;
+                visibility: visible;
             }
         }
     }
 }
+

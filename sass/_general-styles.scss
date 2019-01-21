@@ -1,16 +1,22 @@
 * {
     box-sizing: border-box;
+    @media (max-width: 1199px) {
+        @include no-highlight;
+    }
 }
 body {
     font-family: $brand-font;
     background-color: $body-bg;
-    margin-top: 78px;
+    padding-top: 82px;
+    @include breakpoint(sm) {
+        padding-top: 0;
+        
+    }
 }
 section {
-    margin: 18px 0 22px;
+    margin-bottom: 22px;
 }
 p {
     color: $paragraph-color;
     font-size: $paragraph-font-size;
 }
-

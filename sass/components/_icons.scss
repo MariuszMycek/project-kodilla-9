@@ -15,7 +15,17 @@
 .icon--like-link {
     color: $link-color;
     &:hover {
-        color: $link-hover;
+        @include breakpoint(xl) {
+            color: $link-hover;
+        }
+    }
+    &:active {
+        @include breakpoint(md) {
+            color: $link-hover;
+        }
+        @include breakpoint(sm) {
+            color: $link-hover;
+        }
     }
 }
 [class*="icon__"]:before {

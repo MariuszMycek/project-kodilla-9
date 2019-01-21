@@ -4,6 +4,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    @include breakpoint (sm) {
+        justify-content: center;
+        margin: 0 5px;
+    }
 }
 .date-filter__date-period {
     display: flex;
@@ -13,8 +18,21 @@
     height: 40px;
     border: $border-grey;
     border-radius: 3px;
+    @include breakpoint (sm) {
+        margin-left: 0;
+    }
     &:hover {
-        border: 1px solid $paragraph-color;
+        @include breakpoint(xl) {
+            border: 1px solid $paragraph-color;
+        }
+    }
+    &:active {
+        @include breakpoint(md) {
+            border: 1px solid $paragraph-color;
+        }
+        @include breakpoint(sm) {
+            border: 1px solid $paragraph-color;
+        }
     }
 }
 .date-period__from {
@@ -32,68 +50,92 @@
     font-size: 13px;
     padding: 3px;
     @include transition;
-        &:hover {
-        color: $black;
+    &:hover {
+        @include breakpoint(xl) {
+            color: $black;
+        }
+    }
+    &:active {
+        @include breakpoint(md) {
+            color: $black;
+        }
+        @include breakpoint(sm) {
+            color: $black;
+        }
     }
 }
 .date-filter__button {
     padding: 11px 13px 9px 13px;
     margin-left: 13px;
-    &:hover i {
-        color: $white;
-    }
     i {
         color: $white;
         font-size: 15px;
     }
 }
 .general-statistic__statistic-data {
-    display: flex;
-    justify-content: center;
-}
-.statistic-data__wrapper {
-    display: flex;
     justify-content: space-between;
+    margin-top: 40px;
 }
-.statistic-data__statistic-data-in-table {
-    margin-top: 19px;
-    border-collapse: collapse;
-    width: 45.5%;
-    tr {
-        border-bottom: $border-grey;
-        th {
-            text-align: left;
-            padding-top: 20px;
-            padding-bottom: 8px;
+.statistic-data-wrapper {
+        padding-bottom: 20px;
+        @include breakpoint(sm){
+            padding-left: 14px;
+    padding-right: 14px;
         }
-        td {
-            text-align: right;
-            padding-top: 20px;
-            padding-bottom: 8px;
-        }
-    }
+}
+.statistic-data__title {
+    border-bottom: $border-grey;
+    padding-bottom: 8px;
+}
+.statistic-data__numbers {
+    text-align: right;
+    border-bottom: $border-grey;
+    padding-bottom: 8px;
 }
 
 .general-statistic__earnings-chart {
-    display: flex;
-    justify-content: center;
-    margin-top: 72px;
+    
+    margin-top: 45px;
+    padding-bottom: 55px;
+    @include breakpoint(sm) {
+        padding-left: 19px;
+        padding-right: 19px;
+    }
 }
 
 .earnings-chart__color-tabs {
-    display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 20px;
+
+    @include breakpoint(sm) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 .color-tabs {
     color: $header-font;
     font-size: $header-font-size;
-    margin: 20px 29px 0 13px;
+    margin-top: 20px;
     display: flex;
+    justify-content: center;
     align-items: center;
     padding-left: 14px;
+    @include breakpoint(sm) {
+        justify-content: flex-start;
+        width: 115px;
+    }
     &:hover {
-        background-color: $color-tabs-bg;
+        @include breakpoint(xl) {
+            background-color: $color-tabs-bg;
+        }
+    }
+    &:active {
+        @include breakpoint(md) {
+            background-color: $color-tabs-bg;
+        }
+        @include breakpoint(sm) {
+            background-color: $color-tabs-bg;
+        }
     }
 }
 .color-tabs--pressed {
@@ -103,6 +145,7 @@
     background-color: none;
 }
 .color-tabs__circle {
+    flex-shrink: 0;
     width: 16px;
     height: 16px;
     border-radius: 50%;
@@ -119,7 +162,28 @@
 }
 .earnings-chart__graph {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 67px 0 55px 3px;
+    display: block;
+    overflow-x: auto;
+    margin-top: 67px;
+    
+    @include breakpoint (md) {
+        
+       
+    }
+    @include breakpoint(sm) {
+        margin-top: 30px; 
+        
+        
+    }
+    img {
+        
+        @include breakpoint (md) {
+            display: block;
+            width: auto;
+            margin: 0 auto;
+        }
+        @include breakpoint(sm) {
+            width: auto;
+        }
+    }
 }

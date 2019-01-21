@@ -1,0 +1,6 @@
+.section-with-banners__add-new-button {
+    @extend .section-with-links__add-new-button;
+}
+.section-with-banners__banners-list {
+    @extend .section-with-links__link-list;
+}

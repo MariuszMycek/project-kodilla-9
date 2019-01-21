@@ -12,12 +12,33 @@
 .btn--primary {
     background-color: $btn-primary;
     &:hover {
-        background-color: $btn-primary-hover;
+        @include breakpoint(xl) {
+            background-color: $btn-primary-hover;
+        }
     }
-}.btn--secondary {
+    &:active {
+        @include breakpoint(md) {
+            background-color: $btn-primary-hover;
+        }
+        @include breakpoint(sm) {
+            background-color: $btn-primary-hover;
+        }
+    }
+}
+.btn--secondary {
     background-color: $btn-secondary;
     &:hover {
-        background-color: $btn-secondary-hover;
+        @include breakpoint(xl) {
+            background-color: $btn-secondary-hover;
+        }
+    }
+    &:active {
+        @include breakpoint(md) {
+            background-color: $btn-secondary-hover;
+        }
+        @include breakpoint(sm) {
+            background-color: $btn-secondary-hover;
+        }
     }
 }
 .btn--disabled {

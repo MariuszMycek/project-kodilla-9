@@ -1,17 +1,17 @@
 .section-header {
     display: flex;
-    align-items: center;
-    height: 48px;
     width: 100%;
+    height: 48px;
     border-bottom: $border-grey;
+    align-items: center;
 }
 .section-header__title {
-    @include basic-header-text-style;
-    font-weight: $font-medium;
+    padding-left: 18px;
     text-transform: uppercase;
-    margin-left: 18px;
+    font-weight: $font-medium;
+    @include basic-header-text-style;
 }
 .line-header {
-    @include basic-header-text-style;
     font-weight: $font-bold;
+    @include basic-header-text-style;
 }

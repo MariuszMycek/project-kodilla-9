@@ -5,9 +5,9 @@
     }
 }
 body {
-    font-family: $brand-font;
-    background-color: $body-bg;
     padding-top: 82px;
+    background-color: $body-bg;
+    font-family: $brand-font;
     @include breakpoint(sm) {
         padding-top: 0;
         

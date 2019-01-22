@@ -1,39 +1,38 @@
 .top-bar {
     position: fixed;
-    display: flex;
-    justify-content: flex-end;
-    height: 60px;
     top: 0;
-    background-color: $white;
-    border: $border-grey;
-    color: $top-bar-content;
+    display: flex;
+    height: 60px;
     padding-right: 0;
+    color: $top-bar-content;
+    border: $border-grey;
+    background-color: $white;
+    justify-content: flex-end;
     @include breakpoint(sm) {
-        padding-left: 18px;
-        padding-right: 18px;
         position: static;
-        flex-wrap: wrap;
+        z-index: 99;
         left: 0;
-        justify-content: flex-start;
         width: 100%;
         height: 160px;
-        z-index: 99;
+        padding-right: 18px;
+        padding-left: 18px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
     }
 }
-
 .top-bar__wallet {
     display: flex;
-    align-items: center;
-    padding-left: 17px;
     padding-right: 13px;
-    border-left: $border-grey;
+    padding-left: 17px;
     cursor: pointer;
+    border-left: $border-grey;
+    align-items: center;
     @include transition;
     @include breakpoint(sm) {
         width: 100%;
-        border-left: none;
-        border-bottom: $border-grey;
         padding-left: 18px;
+        border-bottom: $border-grey;
+        border-left: none;
     }
     &:hover {
         @include breakpoint(xl) {
@@ -50,8 +49,8 @@
     }
 }
 .wallet__amount {
-    padding-left: 15px;
     padding-right: 18px;
+    padding-left: 15px;
     font-size: 20px;
     font-weight: $font-medium;
     @include breakpoint(sm) {
@@ -65,21 +64,21 @@
     }
 }
 .wallet__arrow-down-icon {
-    font-size: 12px;
     padding-right: 4px;
+    font-size: 12px;
 }
 .top-bar__notification {
-    display: flex;
-    align-items: center;
     position: relative;
+    display: flex;
     padding: 0 20px;
-    border-left: $border-grey;
     cursor: pointer;
+    border-left: $border-grey;
+    align-items: center;
     @include transition;
     @include breakpoint(sm) {
         width: 100%;
-        border-bottom: $border-grey;
         padding-left: 18px;
+        border-bottom: $border-grey;
         border-left: none;
     }
     &:hover {
@@ -100,13 +99,13 @@
     font-size: 17px;
 }
 .notification__indicator {
-    border-radius: 50%;
-    background-color: $btn-secondary;
-    width: 8px;
-    height: 8px;
     position: absolute;
     top: 17px;
     left: 30px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $btn-secondary;
     @include breakpoint (sm) {
         top: 5px;
         left: 27px;
@@ -114,14 +113,14 @@
 }
 .top-bar__profile {
     display: flex;
-    align-items: center;
     padding: 0 19px;
     border-left: $border-grey;
+    align-items: center;
     @include transition;
     @include breakpoint(sm) {
         width: 100%;
-        border-bottom: $border-grey;
         padding-left: 18px;
+        border-bottom: $border-grey;
         border-left: none;
     }
     &:hover {
@@ -146,24 +145,24 @@
 }
 .profile__name {
     display: flex;
-    align-items: center;
     padding-left: 12px;
+    align-items: center;
     @include breakpoint(sm) {
         padding-left: 0;
     }
 }
 .top-bar__quit {
-    padding-left: 21px;
-    padding-right: 19px;
     display: flex;
-    align-items: center;
-    border-left: $border-grey;
+    padding-right: 19px;
+    padding-left: 21px;
     cursor: pointer;
+    border-left: $border-grey;
+    align-items: center;
     @include transition;
     @include breakpoint(sm) {
         width: 100%;
-        border-bottom: $border-grey;
         padding-left: 18px;
+        border-bottom: $border-grey;
         border-left: none;
     }
     &:hover {

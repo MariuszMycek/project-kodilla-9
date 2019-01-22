@@ -1,13 +1,13 @@
 .btn {
-    font-weight: $font-light;
-    color: $white;
-    font-size: $btn-font-size;
-    padding: 11px 20px;
-    border-radius: 3px;
     display: inline-block;
+    padding: 11px 20px;
     cursor: pointer;
-    @include transition;
     user-select: none;
+    color: $white;
+    border-radius: 3px;
+    font-size: $btn-font-size;
+    font-weight: $font-light;
+    @include transition;
 }
 .btn--primary {
     background-color: $btn-primary;
@@ -17,12 +17,7 @@
         }
     }
     &:active {
-        @include breakpoint(md) {
-            background-color: $btn-primary-hover;
-        }
-        @include breakpoint(sm) {
-            background-color: $btn-primary-hover;
-        }
+        background-color: $btn-primary-hover;
     }
 }
 .btn--secondary {
@@ -33,12 +28,7 @@
         }
     }
     &:active {
-        @include breakpoint(md) {
-            background-color: $btn-secondary-hover;
-        }
-        @include breakpoint(sm) {
-            background-color: $btn-secondary-hover;
-        }
+        background-color: $btn-secondary-hover;
     }
 }
 .btn--disabled {

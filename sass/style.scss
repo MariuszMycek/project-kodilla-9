@@ -1,49 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900");
-
 @import "variables";
 @import "mixins";
 @import "normalize";
 @import "layout";
 @import "general-styles";
-
 /* Components */
+
 @import "components/containers";
 @import "components/headers";
 @import "components/buttons";
 @import "components/links";
 @import "components/icons";
-@import "components/tables";
+@import "components/list-with-two-columns-and-two-icons";
 @import "components/hamburger";
-
 // @import "components/form_field";
-
 /* Sections */
+
 @import "sections/mobile-menu";
 @import "sections/sidebar";
 @import "sections/top-bar";
-
 /* Pages / Views */
+
 @import "pages/general-statistic";
 @import "pages/links-page";
 @import "pages/banners";
-
-
-
 // @import "pages/registration";,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

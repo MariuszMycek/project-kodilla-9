@@ -119,12 +119,11 @@
               <div class="manager-tab__header manager-tab__header--hidden">
                 Your manager
               </div>
-              <div class="manager-tab-display-wrapper">
+              <div role="button" class="manager-tab-display-wrapper">
                 <div
                   class="manager-tab__manager-avatar manager-tab__manager-avatar--short-menu"
                 >
                   <img src="images/manager-photo.png" alt="manager photo" />
-                  <div class="manager-avatar__status-indicator"></div>
                 </div>
                 <div
                   class="manager-tab__manager-name manager-tab__manager-name--hidden"
@@ -153,9 +152,9 @@
             <div class="date-period__to">16.05.2016</div>
             <i class="icon icon--calendar date-period__icon"></i>
           </div>
-          <div class="btn btn--secondary date-filter__button">
+          <button type="button" class="btn btn--secondary date-filter__button">
             <i class="icon icon--refresh"></i>
-          </div>
+          </button>
         </div>
         <div class="general-statistic__statistic-data container-inner row">
           <div class="statistic-data-wrapper row col-sm-12 col-md-5">
@@ -188,20 +187,24 @@
             <h4 class="line-header col-md-12">Earnings chart</h4>
           </div>
           <div class="earnings-chart__color-tabs row">
-            <div class="color-tabs color-tabs--pressed btn col-md-3">
-              <div
-                class="color-tabs__circle color-tabs__circle--turquoise"
-              ></div>
+            <button
+              type="button"
+              class="color-tabs color-tabs--circle-turquoise color-tabs--pressed btn col-md-3"
+            >
               Signups
-            </div>
-            <div class="color-tabs color-tabs--pressed btn col-md-3">
-              <div class="color-tabs__circle color-tabs__circle--orange"></div>
+            </button>
+            <button
+              type="button"
+              class="color-tabs color-tabs--circle-orange color-tabs--pressed btn col-md-3"
+            >
               FTD
-            </div>
-            <div class="color-tabs color-tabs--regular btn col-md-3">
-              <div class="color-tabs__circle color-tabs__circle--green"></div>
+            </button>
+            <button
+              type="button"
+              class="color-tabs color-tabs--circle-green color-tabs--regular btn col-md-3"
+            >
               Earned
-            </div>
+            </button>
           </div>
           <div class="earnings-chart__graph">
             <img src="images/tabs.png" alt="chart" />

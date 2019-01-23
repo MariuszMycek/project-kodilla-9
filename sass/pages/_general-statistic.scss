@@ -113,6 +113,15 @@
         width: 115px;
         justify-content: flex-start;
     }
+    &::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        margin-right: 12px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background-color: $color-tabs-turquoise;
+    }
     &:hover {
         @include breakpoint(xl) {
             background-color: $color-tabs-bg;
@@ -126,23 +135,22 @@
     background-color: $color-tabs-bg;
 }
 .color-tabs--regular {
-    background-color: none;
+    background-color: transparent;
 }
-.color-tabs__circle {
-    width: 16px;
-    height: 16px;
-    margin-right: 12px;
-    border-radius: 50%;
-    flex-shrink: 0;
+.color-tabs--circle-turquoise {
+    &::before {
+        background-color: $color-tabs-turquoise;
+    }
 }
-.color-tabs__circle--turquoise {
-    background-color: $color-tabs-turquoise;
+.color-tabs--circle-orange {
+    &::before {
+        background-color: $color-tabs-orange;
+    }
 }
-.color-tabs__circle--orange {
-    background-color: $color-tabs-orange;
-}
-.color-tabs__circle--green {
-    background-color: $color-tabs-green;
+.color-tabs--circle-green {
+    &::before {
+        background-color: $color-tabs-green;
+    }
 }
 .earnings-chart__graph {
     display: block;

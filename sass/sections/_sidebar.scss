@@ -211,6 +211,21 @@
     align-items: center;
     position: relative;
     margin-left: 20px;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 32px;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background-color: $online-green;
+        @include breakpoint(sm) {
+            left: 35px;
+            width: 12px;
+            height: 12px;
+        }
+    }
     @include breakpoint(sm) {
         width: 50px;
         height: 50px;
@@ -235,20 +250,6 @@
         margin-top: 0;
         margin-left: 20px;
         transform: scale(1);
-    }
-}
-.manager-avatar__status-indicator {
-    position: absolute;
-    top: 0;
-    left: 32px;
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background-color: $online-green;
-    @include breakpoint(sm) {
-        left: 35px;
-        width: 12px;
-        height: 12px;
     }
 }
 .manager-tab__manager-name {

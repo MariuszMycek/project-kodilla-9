@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kodilla poject - 9</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <div class="hamburger-wrapper hamburger-wrapper--short-menu" id="hamburger">
+      <i class="fas fa-bars hamburger"></i>
+    </div>
+    <div class="mobile-menu">
+      <header class="mobile-menu__item-two">
+        <ul class="top-bar container-fluid container-fluid--short-menu">
+          <li class="top-bar__wallet">
+            <button type="button" class="wallet__wallet-button top-bar-button">
+              <i class="wallet-button__wallet-icon icon icon--wallet"></i>
+              <span class="wallet-button__amount">$1,500.00</span>
+              <i
+                class="wallet-button__arrow-down-icon icon icon--arrow-down-small"
+              ></i>
+            </button>
+          </li>
+          <li class="top-bar__notification">
+            <button
+              type="button"
+              class="top-bar-button notification__notification-button"
+            >
+              <i class="notification-button__icon icon icon--notification"></i>
+            </button>
+          </li>
+          <li class="top-bar__profile">
+            <i class="icon icon--profile profile__icon"></i>
+            <a href="#" class="link link--small profile__name"
+              >Leonardo Dicaprio</a
+            >
+          </li>
+          <li class="top-bar__quit">
+            <button type="button" class="top-bar-button quit__quit-button">
+              <i class="quit-button__icon icon icon--quit"></i>
+            </button>
+          </li>
+        </ul>
+      </header>
+      <aside class="mobile-menu__item-one">
+        <nav>
+          <div class="sidebar sidebar--short">
+            <div class="sidebar-logo-wrapper sidebar-logo-wrapper--hidden">
+              <img class="sidebar__logo" src="images/logo.png" alt="logo" />
+            </div>
+            <ul class="sidebar__navigation-links">
+              <li class="navigation-links__link-tab">
+                <a class="sidebar-link" href="index.html"
+                  ><i
+                    class="icon--general link-tab__icon link-tab__icon--short-menu"
+                  ></i
+                  >General</a
+                >
+              </li>
+              <li class="navigation-links__link-tab">
+                <a class="sidebar-link" href="#">
+                  <i
+                    class="icon--details link-tab__icon link-tab__icon--short-menu"
+                  ></i
+                  >Details</a
+                >
+              </li>
+              <li class="navigation-links__link-tab">
+                <a
+                  class="sidebar-link sidebar-link--current-page"
+                  href="links.html"
+                >
+                  <i
+                    class="icon--links link-tab__icon link-tab__icon--short-menu"
+                  ></i
+                  >Links</a
+                >
+              </li>
+              <li class="navigation-links__link-tab">
+                <a class="sidebar-link" href="banners.html">
+                  <i
+                    class="icon--banners link-tab__icon link-tab__icon--short-menu"
+                  ></i
+                  >Banners</a
+                >
+              </li>
+              <li class="navigation-links__link-tab">
+                <a class="sidebar-link" href="#">
+                  <i
+                    class="icon--personaldata link-tab__icon link-tab__icon--short-menu"
+                  ></i
+                  >Personal data</a
+                >
+              </li>
+              <li class="navigation-links__link-tab">
+                <a class="sidebar-link" href="#">
+                  <i
+                    class="icon--payout link-tab__icon link-tab__icon--short-menu"
+                  ></i
+                  >Payout</a
+                >
+              </li>
+              <li class="navigation-links__link-tab">
+                <a class="sidebar-link" href="#">
+                  <i
+                    class="icon--postback link-tab__icon link-tab__icon--short-menu"
+                  ></i
+                  >Postback</a
+                >
+              </li>
+            </ul>
+            <div class="sidebar__manager-tab">
+              <div class="manager-tab__header manager-tab__header--hidden">
+                Your manager
+              </div>
+              <div class="manager-tab-display-wrapper">
+                <div
+                  class="manager-tab__manager-avatar manager-tab__manager-avatar--short-menu"
+                >
+                  <img src="images/manager-photo.png" alt="manager photo" />
+                  <div class="manager-avatar__status-indicator"></div>
+                </div>
+                <div
+                  class="manager-tab__manager-name manager-tab__manager-name--hidden"
+                >
+                  Mikhael E.
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </aside>
+    </div>
+    <div class="mobile-logo-wrapper">
+      <img class="mobile-logo" src="images/logo.png" alt="logo" />
+    </div>
+    <section
+      class="section-with-links container-fluid container-fluid--short-menu"
+    >
+      <div class="container">
+        <div class="section-header">
+          <h4 class="section-header__title">links</h4>
+        </div>
+        <div class="section-with-links__add-new-button">
+          <div class="btn btn--secondary add-new-button__button">+ add new</div>
+        </div>
+        <div class="section-with-links__link-list">
+          <div class="container-inner list-with-two-colums-and-two-icons">
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Home page
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.homepage.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Currently offer
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.currently.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Blurpix
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.blurpix.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Your Site
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.yoursite.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">Google</div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.google.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Facebook
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.facebook.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Dashboard
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.dashboard.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">Blurax</div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.blurax.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Piece of Wine
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.pieceofwine.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Twitter
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.twitter.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-with-links__add-new-button">
+          <div class="btn btn--secondary add-new-button__button">+ add new</div>
+        </div>
+      </div>
+    </section>
+    <script src="js/script.js"></script>
+  </body>
+</html>

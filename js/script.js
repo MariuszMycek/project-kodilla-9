@@ -24,6 +24,7 @@ document.getElementById("hamburger").addEventListener("click", function() {
     .querySelector(".manager-tab__manager-avatar")
     .classList.toggle("manager-tab__manager-avatar--short-menu");
   const containerFluid = document.querySelectorAll(".container-fluid");
-  for (let i = 0; i < containerFluid.length; i++)
+  for (let i = 0; i < containerFluid.length; i++) {
     containerFluid[i].classList.toggle("container-fluid--short-menu");
+  }
 });

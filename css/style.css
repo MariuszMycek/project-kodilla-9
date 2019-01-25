@@ -1332,9 +1332,16 @@ a {
   left: 0;
   opacity: 0;
   width: 4px;
-  height: 42px;
+  height: 100%;
   background-color: #f58220;
   transition: all 0.1s ease-out;
+}
+
+@media (max-width: 767px) {
+  .sidebar-link::before {
+    top: -1px;
+    height: calc(100% + 2px);
+  }
 }
 
 @media (min-width: 1200px) {
@@ -2107,5 +2114,9 @@ a {
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
+}
+
+.page-not-active {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

@@ -25,3 +25,6 @@
 @import "pages/links-page";
 @import "pages/banners";
 // @import "pages/registration";,
+.page-not-active {
+    display: none;
+}

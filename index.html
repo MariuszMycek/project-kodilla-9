@@ -58,8 +58,8 @@
             <ul class="sidebar__navigation-links">
               <li class="navigation-links__link-tab">
                 <a
-                  class="sidebar-link sidebar-link--current-page"
-                  href="index.html"
+                  class="sidebar-link sidebar-link--current-page" id="generalStatistics"
+                  href="#"
                   ><i
                     class="icon--general link-tab__icon link-tab__icon--short-menu"
                   ></i
@@ -67,7 +67,7 @@
                 >
               </li>
               <li class="navigation-links__link-tab">
-                <a class="sidebar-link" href="#">
+                <a class="sidebar-link" id="details" href="#">
                   <i
                     class="icon--details link-tab__icon link-tab__icon--short-menu"
                   ></i
@@ -75,7 +75,7 @@
                 >
               </li>
               <li class="navigation-links__link-tab">
-                <a class="sidebar-link" href="links.html">
+                <a class="sidebar-link" id="links" href="#">
                   <i
                     class="icon--links link-tab__icon link-tab__icon--short-menu"
                   ></i
@@ -83,7 +83,7 @@
                 >
               </li>
               <li class="navigation-links__link-tab">
-                <a class="sidebar-link" href="banners.html">
+                <a class="sidebar-link" id="banners" href="#">
                   <i
                     class="icon--banners link-tab__icon link-tab__icon--short-menu"
                   ></i
@@ -91,7 +91,7 @@
                 >
               </li>
               <li class="navigation-links__link-tab">
-                <a class="sidebar-link" href="#">
+                <a class="sidebar-link" id="personalData" href="#">
                   <i
                     class="icon--personaldata link-tab__icon link-tab__icon--short-menu"
                   ></i
@@ -99,7 +99,7 @@
                 >
               </li>
               <li class="navigation-links__link-tab">
-                <a class="sidebar-link" href="#">
+                <a class="sidebar-link" id="payout" href="#">
                   <i
                     class="icon--payout link-tab__icon link-tab__icon--short-menu"
                   ></i
@@ -107,7 +107,7 @@
                 >
               </li>
               <li class="navigation-links__link-tab">
-                <a class="sidebar-link" href="#">
+                <a class="sidebar-link" id="postback" href="#">
                   <i
                     class="icon--postback link-tab__icon link-tab__icon--short-menu"
                   ></i
@@ -209,6 +209,281 @@
           <div class="earnings-chart__graph">
             <img src="images/tabs.png" alt="chart" />
           </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="section-with-links container-fluid container-fluid--short-menu page-not-active"
+    >
+      <div class="container">
+        <div class="section-header">
+          <h4 class="section-header__title">links</h4>
+        </div>
+        <div class="section-with-links__add-new-button">
+          <button
+            type="button"
+            class="btn btn--secondary add-new-button__button"
+          >
+            + add new
+          </button>
+        </div>
+        <div class="section-with-links__link-list">
+          <div class="container-inner list-with-two-colums-and-two-icons">
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Home page
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.homepage.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Currently offer
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.currently.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Blurpix
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.blurpix.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Your Site
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.yoursite.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">Google</div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.google.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Facebook
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.facebook.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Dashboard
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.dashboard.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">Blurax</div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.blurax.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Piece of Wine
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.pieceofwine.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Twitter
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.twitter.com</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-with-links__add-new-button">
+          <button class="btn btn--secondary add-new-button__button">
+            + add new
+          </button>
+        </div>
+      </div>
+    </section>
+    <section
+      class="section-with-banners container-fluid container-fluid--short-menu page-not-active"
+    >
+      <div class="container">
+        <div class="section-header">
+          <h4 class="section-header__title">banners</h4>
+        </div>
+        <div class="section-with-banners__add-new-button">
+          <button class="btn btn--secondary add-new-button__button">
+            + add new
+          </button>
+        </div>
+        <div class="section-with-banners__banners-list">
+          <div class="container-inner list-with-two-colums-and-two-icons">
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Banner main
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link"
+                    >http://www.website.com/bannermain.gif</a
+                  >
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Sign up banner
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.website.com/signup.gif</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Banner left side
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link"
+                    >http://www.website.com/leftside.gif</a
+                  >
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Vertical banner
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.website.com/vert.gif</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Front banner
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link">http://www.website.com/front.gif</a>
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+            <div class="row list-with-two-colums-and-two-icons__list-row">
+              <div class="col-md-10 col-sm-9 list-content-wrapper row">
+                <div class="line-header col-md-6 link-list__header">
+                  Horizontal banner
+                </div>
+                <div class="col-md-6 link-list__link">
+                  <a href="#" class="link"
+                    >http://www.website.com/horizontal.gif</a
+                  >
+                </div>
+              </div>
+              <div class="list-icon-wrapper col-md-2 col-sm-3">
+                <i class="icon icon--links icon--like-link"></i
+                ><i class="icon icon--trash"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-with-links__add-new-button">
+          <button class="btn btn--secondary add-new-button__button">
+            + add new
+          </button>
         </div>
       </div>
     </section>

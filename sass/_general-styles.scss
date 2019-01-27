@@ -15,6 +15,9 @@ body {
 }
 section {
     margin-bottom: 22px;
+    @include breakpoint (sm) {
+        margin-bottom: 0;
+    }
 }
 p {
     color: $paragraph-color;

@@ -1,0 +1,20 @@
+.form__label {
+    @extend .line-header;
+}
+.form__input[type="text"] , 
+.form__input[type="password"] ,
+.form__input[type="number"],
+.form__input[type="email"],
+.form__input[type="tel"] {
+    padding: 11px 13px;
+    color: $paragraph-color;
+    font-size: $paragraph-font-size;
+    border: $border-grey;
+    border-radius: 3px;
+    &:hover {
+        border-color: #b1b1b1;
+    }
+    &:focus {
+        outline-color: #b1b1b1;
+    }
+}

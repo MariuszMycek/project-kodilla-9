@@ -58,7 +58,8 @@
             <ul class="sidebar__navigation-links">
               <li class="navigation-links__link-tab">
                 <a
-                  class="sidebar-link sidebar-link--current-page" id="generalStatistics"
+                  class="sidebar-link sidebar-link--current-page"
+                  id="generalStatistics"
                   href="#"
                   ><i
                     class="icon--general link-tab__icon link-tab__icon--short-menu"
@@ -485,6 +486,112 @@
             + add new
           </button>
         </div>
+      </div>
+    </section>
+    <section
+      class="personal-data container-fluid container-fluid--short-menu page-not-active"
+    >
+      <div class="container">
+        <div class="section-header">
+          <h4 class="section-header__title">personal data</h4>
+        </div>
+        <form
+          action=""
+          method="POST"
+          class="form personal-data__personal-data-form"
+        >
+          <div class="personal-data-form__block-with-inputs">
+            <div class="general-information__form-field row">
+              <label class="form__label col-md-4 col-sm-12">Name</label>
+              <input
+                type="text"
+                name="user-name"
+                class="col-md-8 col-sm-12 form__input"
+                value="Leonardo"
+              />
+            </div>
+            <div class="general-information__form-field row">
+              <label class="form__label col-md-4 col-sm-12">Surname</label>
+              <input
+                type="text"
+                name="user-surname"
+                class="col-md-8 col-sm-12 form__input"
+                value="Dicaprio"
+              />
+            </div>
+            <div class="general-information__form-field row">
+              <label class="form__label col-md-4 col-sm-12">Email</label>
+              <input
+                type="email"
+                name="user-email"
+                class="col-md-8 col-sm-12 form__input"
+                value="leo@gmail.com"
+              />
+            </div>
+            <div class="general-information__form-field row">
+              <label class="form__label col-md-4 col-sm-12">Phone number</label>
+              <input
+                type="tel"
+                name="user-phone"
+                class="col-md-8 col-sm-12 form__input"
+                value="+1 432 555 00 44"
+              />
+            </div>
+          </div>
+          <div class="personal-data-form__block-with-inputs">
+            <div class="general-information__form-field row">
+              <label class="form__label col-md-4 col-sm-12">Skype</label>
+              <input
+                type="text"
+                name="user-skype"
+                class="col-md-8 col-sm-12 form__input"
+                value="Leonardo.D"
+              />
+            </div>
+            <div class="general-information__form-field row">
+              <label class="form__label col-md-4 col-sm-12">ICQ</label>
+              <input type="text" name="user-icq" class="col-md-8 col-sm-12 form__input" value="" />
+            </div>
+            <div class="general-information__form-field row">
+              <label class="form__label col-md-4 col-sm-12">Msn</label>
+              <input type="text" name="user-msn" class="col-md-8 col-sm-12 form__input" value="" />
+            </div>
+          </div>
+          <div class="personal-data-form__block-with-inputs">
+            <div class="general-information__form-field row">
+              <label class="form__label col-md-4 col-sm-12">Wallet</label>
+              <input
+                type="number"
+                name="user-wallet"
+                class="col-md-8 col-sm-12 form__input"
+                value=""
+              />
+            </div>
+          </div>
+          <div class="personal-data-form__block-with-inputs">
+            <div class="general-information__form-field row">
+              <label class="form__label col-md-4 col-sm-12">Password</label>
+              <input
+                type="password"
+                name="user-password"
+                class="col-md-8 col-sm-12 form__input"
+                value=""
+              />
+            </div>
+            <div class="general-information__form-field row">
+              <label class="form__label col-md-4 col-sm-12">Repeat</label>
+              <input type="password" class="col-md-8 col-sm-12 form__input" value="" />
+            </div>
+          </div>
+          <div class="personal-data-form__save-button-field row">
+            <button
+              type="submit"
+              class="btn btn--secondary save-button-field__button"
+            >
+              Save
+            </button>
+          </div>
+        </form>
       </div>
     </section>
     <script src="js/script.js"></script>

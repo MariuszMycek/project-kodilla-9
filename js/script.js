@@ -80,3 +80,9 @@ bannersNavTab.addEventListener("click", function() {
     .querySelector("section.section-with-banners")
     .classList.remove("page-not-active");
 });
+personalNavTab.addEventListener("click", function() {
+  clickSidebarNavTab(this);
+  document
+    .querySelector("section.personal-data")
+    .classList.remove("page-not-active");
+});

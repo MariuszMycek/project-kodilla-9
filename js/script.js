@@ -1,3 +1,20 @@
+// Function shows logout pop-up after click in top-bar "Quit" button
+document
+  .querySelector(".top-bar__quit button")
+  .addEventListener("click", function() {
+    document
+      .querySelector(".top-bar__log-out-pop-up")
+      .classList.remove("top-bar__log-out-pop-up--hidden");
+  });
+// Function hides logout pop-up after click in "Cancel" button
+document
+  .querySelector(".log-out-window__buttons button")
+  .addEventListener("click", function() {
+    document
+      .querySelector(".top-bar__log-out-pop-up")
+      .classList.add("top-bar__log-out-pop-up--hidden");
+  });
+
 // Function contains a behavior of all elements after click on HAMBURGER
 document.getElementById("hamburger").addEventListener("click", function() {
   // Mobile menu hide and show
@@ -86,3 +103,33 @@ personalNavTab.addEventListener("click", function() {
     .querySelector("section.personal-data")
     .classList.remove("page-not-active");
 });
+
+/* IIFE adds "blur" event listeners to all Personal Data input fields. 
+If field is valid it get green shadow after loosing focus. 
+If invalid - it gets red shadow. */
+(function() {
+  const inputFields = document.querySelectorAll(
+    ".general-information__form-field .form__input"
+  );
+  for (let i = 0; i < inputFields.length; i++) {
+    inputFields[i].addEventListener("blur", function() {
+      this.classList.remove("form__input--valid");
+      this.classList.remove("form__input--invalid");
+      this.validity.valid
+        ? this.classList.add("form__input--valid")
+        : this.classList.add("form__input--invalid");
+    });
+  }
+})();
+
+// Personal Data Form - repeat password validator
+const repeatPassword = document.getElementById("repeat-password");
+const passwordRepeatCheck = function() {
+  const password = document.getElementById("password");
+  if (password.value != repeatPassword.value) {
+    repeatPassword.setCustomValidity("Passwords don't match!");
+  } else {
+    repeatPassword.setCustomValidity("");
+  }
+};
+repeatPassword.addEventListener("keyup", passwordRepeatCheck);

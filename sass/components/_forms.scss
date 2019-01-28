@@ -1,8 +1,8 @@
 .form__label {
     @extend .line-header;
 }
-.form__input[type="text"] , 
-.form__input[type="password"] ,
+.form__input[type="text"],
+.form__input[type="password"],
 .form__input[type="number"],
 .form__input[type="email"],
 .form__input[type="tel"] {
@@ -16,5 +16,39 @@
     }
     &:focus {
         outline-color: #b1b1b1;
+        box-shadow: none;
+        & + .input__info {
+            display: block;
+        }
     }
+    &::placeholder {
+        color: $header-font;
+        font-size: 12px;
+        font-weight: $font-light;
+    }
+}
+.form__input--valid[type="text"],
+.form__input--valid[type="password"],
+.form__input--valid[type="number"],
+.form__input--valid[type="email"],
+.form__input--valid[type="tel"] {
+    box-shadow: 0 0 0 2px #04ae00;
+}
+.form__input--invalid[type="text"],
+.form__input--invalid[type="password"],
+.form__input--invalid[type="number"],
+.form__input--invalid[type="email"],
+.form__input--invalid[type="tel"] {
+    box-shadow: 0 0 0 2px #f00;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.input__info {
+    display: none;
+    color: $header-font;
+    font-size: 12px;
+    font-weight: $font-light;
 }

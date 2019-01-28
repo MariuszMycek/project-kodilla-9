@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
-  <body class="body--hidden">
+  <body>
     <div class="hamburger-wrapper hamburger-wrapper--short-menu" id="hamburger">
       <i class="fas fa-bars hamburger"></i>
     </div>
@@ -48,6 +48,19 @@
             </button>
           </li>
         </ul>
+        <div class="top-bar__log-out-pop-up top-bar__log-out-pop-up--hidden">
+          <div class="log-out-pop-up__log-out-window">
+            <div class="log-out-window__header line-header">
+              Do you really want to Quit?
+            </div>
+            <div class="log-out-window__buttons">
+              <button type="button" class="btn btn--primary">Cancel</button>
+              <a href="https://www.google.com" class="btn btn--secondary"
+                >Quit</a
+              >
+            </div>
+          </div>
+        </div>
       </header>
       <aside class="mobile-menu__item-one">
         <nav>
@@ -508,6 +521,9 @@
                 name="user-name"
                 class="col-md-8 col-sm-12 form__input"
                 value="Leonardo"
+                required
+                pattern="[A-Z][a-z']+"
+                placeholder="Type your name(required)"
               />
             </div>
             <div class="general-information__form-field row">
@@ -517,6 +533,9 @@
                 name="user-surname"
                 class="col-md-8 col-sm-12 form__input"
                 value="Dicaprio"
+                required
+                pattern="[A-Za-z][a-z' ]+[A-Za-z']+"
+                placeholder="Type your surname(required)"
               />
             </div>
             <div class="general-information__form-field row">
@@ -526,6 +545,9 @@
                 name="user-email"
                 class="col-md-8 col-sm-12 form__input"
                 value="leo@gmail.com"
+                required
+                pattern="^((([!#$%&'*+\-/=?^_`{|}~\w])|([!#$%&'*+\-/=?^_`{|}~\w][!#$%&'*+\-/=?^_`{|}~\.\w]{0,}[!#$%&'*+\-/=?^_`{|}~\w]))[@]\w+([-.]\w+)*\.\w+([-.]\w+)*)$"
+                placeholder="Type your email(required)"
               />
             </div>
             <div class="general-information__form-field row">
@@ -535,6 +557,9 @@
                 name="user-phone"
                 class="col-md-8 col-sm-12 form__input"
                 value="+1 432 555 00 44"
+                required
+                pattern="[+0-9][0-9 ]+"
+                placeholder="Type your phone number(required)"
               />
             </div>
           </div>
@@ -546,15 +571,28 @@
                 name="user-skype"
                 class="col-md-8 col-sm-12 form__input"
                 value="Leonardo.D"
+                placeholder="Type your Skype account name"
               />
             </div>
             <div class="general-information__form-field row">
               <label class="form__label col-md-4 col-sm-12">ICQ</label>
-              <input type="text" name="user-icq" class="col-md-8 col-sm-12 form__input" value="" />
+              <input
+                type="text"
+                name="user-icq"
+                class="col-md-8 col-sm-12 form__input"
+                value=""
+                placeholder="Type your ICQ account name"
+              />
             </div>
             <div class="general-information__form-field row">
               <label class="form__label col-md-4 col-sm-12">Msn</label>
-              <input type="text" name="user-msn" class="col-md-8 col-sm-12 form__input" value="" />
+              <input
+                type="text"
+                name="user-msn"
+                class="col-md-8 col-sm-12 form__input"
+                value=""
+                placeholder="Type your Msn account name"
+              />
             </div>
           </div>
           <div class="personal-data-form__block-with-inputs">
@@ -565,6 +603,7 @@
                 name="user-wallet"
                 class="col-md-8 col-sm-12 form__input"
                 value=""
+                placeholder="Type the amount of cash"
               />
             </div>
           </div>
@@ -573,19 +612,36 @@
               <label class="form__label col-md-4 col-sm-12">Password</label>
               <input
                 type="password"
+                id="password"
                 name="user-password"
                 class="col-md-8 col-sm-12 form__input"
                 value=""
+                required
+                pattern="^(?=.*\d).{4,8}$"
+                placeholder="Type your password(required)"
               />
+              <div class="input__info col-md-8 col-sm-12">
+                Password must be between 4 and 8 characters long and include at
+                least one numeric digit
+              </div>
             </div>
             <div class="general-information__form-field row">
               <label class="form__label col-md-4 col-sm-12">Repeat</label>
-              <input type="password" class="col-md-8 col-sm-12 form__input" value="" />
+              <input
+                type="password"
+                id="repeat-password"
+                class="col-md-8 col-sm-12 form__input"
+                value=""
+                required
+                pattern="^(?=.*\d).{4,8}$"
+                placeholder="Repeat your password"
+              />
             </div>
           </div>
           <div class="personal-data-form__save-button-field row">
             <button
               type="submit"
+              id="personal-data-save-button"
               class="btn btn--secondary save-button-field__button"
             >
               Save

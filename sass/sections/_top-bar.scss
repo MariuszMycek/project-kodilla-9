@@ -187,3 +187,51 @@
 .quit-button__icon {
     font-size: 19px;
 }
+.top-bar__log-out-pop-up {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.top-bar__log-out-pop-up--hidden {
+    display: none;
+}
+.log-out-pop-up__log-out-window {
+    margin: 40vh auto;
+    width: 360px;
+    height: 150px;
+    background: $white;
+    @include breakpoint(sm) {
+        width: 100%;
+    }
+}
+.log-out-window__header {
+    font-weight: $font-medium;
+    height: 46%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-bottom: $border-grey;
+}
+.log-out-window__buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 54%;
+    @include breakpoint(sm) {
+        justify-content: space-around;
+    }
+    a {
+        padding-left: 31px;
+        padding-right: 31px;
+        margin-left: 20px;
+        margin-right: 20px;
+        @include breakpoint(sm) {
+            margin-left: 0x;
+            margin-right: 0;
+        }
+    }
+}

@@ -33,6 +33,6 @@
         background-color: $btn-secondary-hover;
     }
 }
-.btn--disabled {
+.btn:disabled {
     background-color: $btn-disabled;
 }

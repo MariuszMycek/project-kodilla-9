@@ -1,3 +1,51 @@
+/*IIFE adds "blur" event to login input fields. After loosing focus it sets color of icon, 
+according to input field content. 
+*/
+(function() {
+  const loginInputs = document.querySelectorAll(".log-in-form__input");
+  for (let i = 0; i < loginInputs.length; i++) {
+    loginInputs[i].addEventListener("blur", function() {
+      loginInputs[i].value != ""
+        ? (loginInputs[i].parentNode.querySelector(
+            ".log-in-form__icon"
+          ).style.color = "#333333")
+        : (loginInputs[i].parentNode.querySelector(
+            ".log-in-form__icon"
+          ).style.color = "#a6a6a6");
+    });
+  }
+})();
+
+// Temporary function to show what is happening when password is wrong.
+document
+  .querySelector(".log-in-form__button")
+  .addEventListener("click", function() {
+    const inputPassword = document.querySelector(
+      ".log-in-form__input--password"
+    );
+    const inputLogin = document.querySelector(".log-in-form__input--login");
+    if (
+      inputPassword.value == 1234 ||
+      inputPassword.value == "" ||
+      inputLogin.value == ""
+    ) {
+      return true;
+    } else {
+      event.preventDefault();
+      document
+        .querySelector(".log-in-form__password-error")
+        .classList.add("log-in-form__password-error--visible");
+      inputPassword.classList.add("log-in-form__input--password-error");
+    }
+  });
+
+// Temporary function to show login pop-up after click in profile name link.
+document.querySelector(".profile__name").addEventListener("click", function() {
+  document
+    .querySelector(".top-bar__log-in-pop-up")
+    .classList.remove("top-bar__log-in-pop-up--hidden");
+});
+
 // Function shows logout pop-up after click in top-bar "Quit" button
 document
   .querySelector(".top-bar__quit button")

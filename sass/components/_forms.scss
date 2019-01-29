@@ -11,12 +11,12 @@
     font-size: $paragraph-font-size;
     border: $border-grey;
     border-radius: 3px;
+    outline: none;
     &:hover {
         border-color: #b1b1b1;
     }
     &:focus {
-        outline-color: #b1b1b1;
-        box-shadow: none;
+        box-shadow: 0 0 0 2px #b1b1b1;
         & + .input__info {
             display: block;
         }
@@ -32,20 +32,24 @@
 .form__input--valid[type="number"],
 .form__input--valid[type="email"],
 .form__input--valid[type="tel"] {
-    box-shadow: 0 0 0 2px #04ae00;
+    box-shadow: 0 0 0 1px #04ae00;
 }
 .form__input--invalid[type="text"],
 .form__input--invalid[type="password"],
 .form__input--invalid[type="number"],
 .form__input--invalid[type="email"],
 .form__input--invalid[type="tel"] {
-    box-shadow: 0 0 0 2px #f00;
+    box-shadow: 0 0 0 1px #f00;
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 .input__info {
     display: none;
     color: $header-font;

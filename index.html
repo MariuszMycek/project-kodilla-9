@@ -48,6 +48,55 @@
             </button>
           </li>
         </ul>
+        <div class="top-bar__log-in-pop-up top-bar__log-in-pop-up--hidden">
+          <div class="log-in-pop-up__log-in-window">
+            <div class="section-header">
+              <h4 class="section-header__title">login</h4>
+            </div>
+            <div class="log-in-window__log-in-input-field">
+              <form
+                action=""
+                method="POST"
+                class="log-in-input-field__log-in-form row"
+              >
+                <div class="log-in-form-input-wrapper">
+                  <input
+                    type="text"
+                    name="login"
+                    class="form__input log-in-form__input log-in-form__input--login"
+                    required
+                    placeholder="login name"
+                  />
+                  <div
+                    class="log-in-form__icon log-in-form__icon--login icon--login"
+                  ></div>
+                </div>
+                <div class="log-in-form-input-wrapper">
+                  <input
+                    type="password"
+                    name="password"
+                    class="form__input log-in-form__input log-in-form__input--password"
+                    required
+                    placeholder="password"
+                  />
+                  <div class="log-in-form__password-error">
+                    Password is wrong. <br />
+                    <a href="#" class="link link--small">Did you forget it?</a>
+                  </div>
+                  <div
+                    class="log-in-form__icon log-in-form__icon--password icon--password"
+                  ></div>
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn--secondary log-in-form__button col-sm-12"
+                >
+                  Enter
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
         <div class="top-bar__log-out-pop-up top-bar__log-out-pop-up--hidden">
           <div class="log-out-pop-up__log-out-window">
             <div class="log-out-window__header line-header">

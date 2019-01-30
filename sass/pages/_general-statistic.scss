@@ -114,13 +114,13 @@
         justify-content: flex-start;
     }
     &::before {
-        content: "";
         width: 16px;
         height: 16px;
         margin-right: 12px;
+        content: "";
         border-radius: 50%;
-        flex-shrink: 0;
         background-color: $color-tabs-turquoise;
+        flex-shrink: 0;
     }
     &:hover {
         @include breakpoint(xl) {
@@ -152,14 +152,14 @@
         background-color: $color-tabs-green;
     }
 }
-.earnings-chart__graph {
-    display: block;
+.chart-wrapper {
+    overflow: hidden;
     overflow-x: auto;
-    width: 100%;
+}
+.earnings-chart__graph {
+    position: relative;
+    min-width: 280px;    
     margin-top: 67px;
-
-    @include breakpoint (md) {
-    }
     @include breakpoint(sm) {
         margin-top: 30px;
     }

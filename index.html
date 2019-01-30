@@ -13,6 +13,66 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
+    <div class="pop-up pop-up--hidden">
+      <div class="pop-up__log-in-window" id="login">
+        <div class="section-header">
+          <h4 class="section-header__title">login</h4>
+        </div>
+        <div class="log-in-window__log-in-input-field">
+          <form
+            action=""
+            method="POST"
+            class="log-in-input-field__log-in-form row"
+          >
+            <div class="log-in-form-input-wrapper">
+              <input
+                type="text"
+                name="login"
+                class="form__input log-in-form__input log-in-form__input--login"
+                required
+                placeholder="login name"
+              />
+              <div
+                class="log-in-form__icon log-in-form__icon--login icon--login"
+              ></div>
+            </div>
+            <div class="log-in-form-input-wrapper">
+              <input
+                type="password"
+                name="password"
+                class="form__input log-in-form__input log-in-form__input--password"
+                required
+                placeholder="password"
+              />
+              <div class="log-in-form__password-error">
+                Password is wrong. <br />
+                <a href="#" class="link link--small">Did you forget it?</a>
+              </div>
+              <div
+                class="log-in-form__icon log-in-form__icon--password icon--password"
+              ></div>
+            </div>
+            <button
+              type="submit"
+              class="btn btn--secondary log-in-form__button col-sm-12"
+            >
+              Enter
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="pop-up__log-out-window" id="logout">
+        <div class="log-out-window__header line-header">
+          Do you really want to Quit?
+        </div>
+        <div class="log-out-window__buttons">
+          <button type="button" class="btn btn--primary js--close-pop-up">
+            Cancel
+          </button>
+          <a href="https://www.google.com" class="btn btn--secondary">Quit</a>
+        </div>
+      </div>
+    </div>
     <div class="hamburger-wrapper hamburger-wrapper--short-menu" id="hamburger">
       <i class="fas fa-bars hamburger"></i>
     </div>
@@ -48,68 +108,6 @@
             </button>
           </li>
         </ul>
-        <div class="top-bar__log-in-pop-up top-bar__log-in-pop-up--hidden">
-          <div class="log-in-pop-up__log-in-window">
-            <div class="section-header">
-              <h4 class="section-header__title">login</h4>
-            </div>
-            <div class="log-in-window__log-in-input-field">
-              <form
-                action=""
-                method="POST"
-                class="log-in-input-field__log-in-form row"
-              >
-                <div class="log-in-form-input-wrapper">
-                  <input
-                    type="text"
-                    name="login"
-                    class="form__input log-in-form__input log-in-form__input--login"
-                    required
-                    placeholder="login name"
-                  />
-                  <div
-                    class="log-in-form__icon log-in-form__icon--login icon--login"
-                  ></div>
-                </div>
-                <div class="log-in-form-input-wrapper">
-                  <input
-                    type="password"
-                    name="password"
-                    class="form__input log-in-form__input log-in-form__input--password"
-                    required
-                    placeholder="password"
-                  />
-                  <div class="log-in-form__password-error">
-                    Password is wrong. <br />
-                    <a href="#" class="link link--small">Did you forget it?</a>
-                  </div>
-                  <div
-                    class="log-in-form__icon log-in-form__icon--password icon--password"
-                  ></div>
-                </div>
-                <button
-                  type="submit"
-                  class="btn btn--secondary log-in-form__button col-sm-12"
-                >
-                  Enter
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="top-bar__log-out-pop-up top-bar__log-out-pop-up--hidden">
-          <div class="log-out-pop-up__log-out-window">
-            <div class="log-out-window__header line-header">
-              Do you really want to Quit?
-            </div>
-            <div class="log-out-window__buttons">
-              <button type="button" class="btn btn--primary">Cancel</button>
-              <a href="https://www.google.com" class="btn btn--secondary"
-                >Quit</a
-              >
-            </div>
-          </div>
-        </div>
       </header>
       <aside class="mobile-menu__item-one">
         <nav>
@@ -249,28 +247,10 @@
           <div class="row">
             <h4 class="line-header col-md-12">Earnings chart</h4>
           </div>
-          <div class="earnings-chart__color-tabs row">
-            <button
-              type="button"
-              class="color-tabs color-tabs--circle-turquoise color-tabs--pressed btn col-md-3"
-            >
-              Signups
-            </button>
-            <button
-              type="button"
-              class="color-tabs color-tabs--circle-orange color-tabs--pressed btn col-md-3"
-            >
-              FTD
-            </button>
-            <button
-              type="button"
-              class="color-tabs color-tabs--circle-green color-tabs--regular btn col-md-3"
-            >
-              Earned
-            </button>
-          </div>
-          <div class="earnings-chart__graph">
-            <img src="images/tabs.png" alt="chart" />
+          <div class="chart-wrapper">
+            <div class="earnings-chart__graph">
+              <canvas id="myChart"></canvas>
+            </div>
           </div>
         </div>
       </div>
@@ -699,6 +679,7 @@
         </form>
       </div>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

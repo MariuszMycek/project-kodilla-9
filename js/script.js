@@ -1,3 +1,5 @@
+//  -- POP-UPS -------------------------------------------------------------------
+
 /*IIFE adds "blur" event to login input fields. After loosing focus it sets color of icon, 
 according to input field content. 
 */
@@ -16,7 +18,7 @@ according to input field content.
   }
 })();
 
-// Temporary function to show what is happening when password is wrong.
+// Temporary function to show what is happening when password in login pop-up is wrong.
 document
   .querySelector(".log-in-form__button")
   .addEventListener("click", function() {
@@ -39,29 +41,59 @@ document
     }
   });
 
+// Function close all pop-ups and opens that one we need
+const openPopUp = function(popUp) {
+  document.querySelectorAll(".pop-up > *").forEach(function(popUp) {
+    popUp.classList.add("pop-up--hidden");
+  });
+  document.querySelector(".pop-up").classList.remove("pop-up--hidden");
+  document.querySelector(popUp).classList.remove("pop-up--hidden");
+};
+
 // Temporary function to show login pop-up after click in profile name link.
 document.querySelector(".profile__name").addEventListener("click", function() {
-  document
-    .querySelector(".top-bar__log-in-pop-up")
-    .classList.remove("top-bar__log-in-pop-up--hidden");
+  openPopUp("#login");
 });
 
 // Function shows logout pop-up after click in top-bar "Quit" button
 document
   .querySelector(".top-bar__quit button")
   .addEventListener("click", function() {
-    document
-      .querySelector(".top-bar__log-out-pop-up")
-      .classList.remove("top-bar__log-out-pop-up--hidden");
+    openPopUp("#logout");
   });
-// Function hides logout pop-up after click in "Cancel" button
-document
-  .querySelector(".log-out-window__buttons button")
-  .addEventListener("click", function() {
-    document
-      .querySelector(".top-bar__log-out-pop-up")
-      .classList.add("top-bar__log-out-pop-up--hidden");
+
+// Function adds class with "display: none" to all pop-ups.
+const closePopUp = function() {
+  document.querySelectorAll(".pop-up").forEach(function(popUp) {
+    popUp.classList.add("pop-up--hidden");
   });
+};
+
+// Function hides pop-ups after click in "element"
+document.querySelectorAll(".js--close-pop-up").forEach(function(element) {
+  element.addEventListener("click", function(event) {
+    event.preventDefault();
+    closePopUp();
+  });
+});
+
+// Function closes pop-ups after click on the pop-up overlay
+document.querySelectorAll(".pop-up").forEach(function(popUpOverlay) {
+  popUpOverlay.addEventListener("click", function(event) {
+    if (event.target === this) {
+      closePopUp();
+    }
+  });
+});
+
+// Function closes pop-ups after click on Esc key
+document.addEventListener("keyup", function(event) {
+  if (event.keyCode === 27) {
+    closePopUp();
+  }
+});
+
+// -- HAMBURGER and SIDEBAR MENU ---------------------------------------------------------
 
 // Function contains a behavior of all elements after click on HAMBURGER
 document.getElementById("hamburger").addEventListener("click", function() {
@@ -152,6 +184,8 @@ personalNavTab.addEventListener("click", function() {
     .classList.remove("page-not-active");
 });
 
+// -- FORM BEHAVIOR -----------------------------------------------------------------
+
 /* IIFE adds "blur" event listeners to all Personal Data input fields. 
 If field is valid it get green shadow after loosing focus. 
 If invalid - it gets red shadow. */
@@ -181,3 +215,36 @@ const passwordRepeatCheck = function() {
   }
 };
 repeatPassword.addEventListener("keyup", passwordRepeatCheck);
+
+// -- GENERAL STATISTIC CHART ------------------------------------------------------------
+
+const ctx = document.getElementById("myChart").getContext("2d");
+
+const chart = new Chart(ctx, {
+  // 1
+  type: "bar",
+  data: {
+    labels: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"],
+    datasets: [
+      {
+        label: "Signups",
+        backgroundColor: "#8DBEC8",
+        borderColor: "#8DBEC8",
+        data: [52, 51, 41, 94, 26, 6, 72, 9, 21, 88]
+      },
+      {
+        label: "FTD",
+        backgroundColor: "#F29E4E",
+        borderColor: "#F29E4E",
+        data: [6, 72, 1, 0, 47, 11, 50, 44, 63, 76]
+      },
+      {
+        label: "Earned",
+        backgroundColor: "#71B374",
+        borderColor: "#71B374",
+        data: [59, 49, 68, 90, 67, 41, 13, 38, 48, 48],
+        hidden: true
+      }
+    ]
+  }
+});

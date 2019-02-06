@@ -10,4 +10,4 @@ Working features:
   - Banners - with form to add new banners,
   - Personal data.
   
-  
+ All files compressed and ready to publish are placed in DOCS folder. 

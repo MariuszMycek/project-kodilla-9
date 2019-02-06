@@ -112,13 +112,13 @@ document.getElementById("hamburger").addEventListener("click", function () {
 });
 
 // Shortcuts to sidebar navigation tabs location
-var generalNavTab = document.getElementById("generalStatistics");
-var detailsNavTab = document.getElementById("details");
-var linksNavTab = document.getElementById("links");
-var bannersNavTab = document.getElementById("banners");
-var personalNavTab = document.getElementById("personalData");
-var payoutNavTab = document.getElementById("payout");
-var postbackNavTab = document.getElementById("postback");
+var generalNavTab = document.getElementById("genaral-tab");
+var detailsNavTab = document.getElementById("details-tab");
+var linksNavTab = document.getElementById("links-tab");
+var bannersNavTab = document.getElementById("banners-tab");
+var personalNavTab = document.getElementById("personal-tab");
+var payoutNavTab = document.getElementById("payout-tab");
+var postbackNavTab = document.getElementById("postback-tab");
 
 /* This function hides all sections after click on sidebar navigation tab.
  Also it highlights active navigation tab */

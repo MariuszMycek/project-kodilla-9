@@ -1,3 +1,5 @@
+"use strict";
+
 //  -- POP-UPS -------------------------------------------------------------------
 
 /*IIFE adds "blur" event to login input fields. After loosing focus it sets color of icon, 
@@ -43,8 +45,8 @@ document
 
 // Function close all pop-ups and opens that one we need
 const openPopUp = function(popUp) {
-  document.querySelectorAll(".pop-up > *").forEach(function(popUp) {
-    popUp.classList.add("pop-up--hidden");
+  document.querySelectorAll(".pop-up > *").forEach(function(popUps) {
+    popUps.classList.add("pop-up--hidden");
   });
   document.querySelector(".pop-up").classList.remove("pop-up--hidden");
   document.querySelector(popUp).classList.remove("pop-up--hidden");
@@ -142,7 +144,8 @@ const personalNavTab = document.getElementById("personalData");
 const payoutNavTab = document.getElementById("payout");
 const postbackNavTab = document.getElementById("postback");
 
-// This function hides all sections after click on sidebar navigation tab. Also it highlights active navigation tab
+/* This function hides all sections after click on sidebar navigation tab.
+ Also it highlights active navigation tab */
 const clickSidebarNavTab = function(navTab) {
   const allSections = document.querySelectorAll("section");
   for (let i = 0; i < allSections.length; i++) {
@@ -184,30 +187,80 @@ personalNavTab.addEventListener("click", function() {
     .classList.remove("page-not-active");
 });
 
+// -- LINE NOTIFICATIONS ------------------------------------------------------------
+const lineNotification = document.querySelector(".pop-up__line-notification");
+
+//  Closing line notification after click in "X" button
+document
+  .querySelector(".close-button-icon")
+  .addEventListener("click", function() {
+    closePopUp();
+  });
+
+/* Function displays line notifications. If notification is positive, it adds green background
+  and proper message and icon.  If notification is negative, it adds red background
+  and proper message and icon.*/
+const lineNotificationMessage = function(message, notificationType) {
+  const lineNotificationIcon = document.querySelector(
+    ".line-notification__icon"
+  );
+  const lineNotificationText = document.querySelector(
+    ".line-notification__text"
+  );
+  lineNotificationText.innerHTML = message;
+
+  lineNotification.classList.remove("line-notification--positive");
+  lineNotificationIcon.classList.remove("icon--positive");
+  lineNotification.classList.remove("line-notification--negative");
+  lineNotificationIcon.classList.remove("icon--negative");
+  if (notificationType == "positive") {
+    lineNotification.classList.add("line-notification--positive");
+    lineNotificationIcon.classList.add("icon--positive");
+  } else if (notificationType == "negative") {
+    lineNotification.classList.add("line-notification--negative");
+    lineNotificationIcon.classList.add("icon--negative");
+  }
+  openPopUp(".pop-up__line-notification");
+};
+
 // -- FORM BEHAVIOR -----------------------------------------------------------------
 
-/* IIFE adds "blur" event listeners to all Personal Data input fields. 
-If field is valid it get green shadow after loosing focus. 
-If invalid - it gets red shadow. */
+/* IIFE adds "blur" event listeners to all input/select fields. 
+After loosing focus, field appearance returns to its normal state
+ (when field shadow is green or red after validation). */
 (function() {
-  const inputFields = document.querySelectorAll(
-    ".general-information__form-field .form__input"
-  );
-  for (let i = 0; i < inputFields.length; i++) {
-    inputFields[i].addEventListener("blur", function() {
-      this.classList.remove("form__input--valid");
-      this.classList.remove("form__input--invalid");
-      this.validity.valid
-        ? this.classList.add("form__input--valid")
-        : this.classList.add("form__input--invalid");
+  const inputFields = document.querySelectorAll(".form__input");
+  inputFields.forEach(function(inputField) {
+    inputField.addEventListener("blur", function() {
+      inputField.classList.remove("form__input--valid");
+      inputField.classList.remove("form__input--invalid");
     });
-  }
+  });
 })();
+
+// Function adds green or red shadow to the input/select fields after form validation
+const inputFieldshadow = function(fields) {
+  fields.forEach(function(inputField) {
+    inputField.classList.remove("form__input--valid");
+    inputField.classList.remove("form__input--invalid");
+    inputField.validity.valid
+      ? inputField.classList.add("form__input--valid")
+      : inputField.classList.add("form__input--invalid");
+  });
+};
+
+// Function removes color shadow from input/select fields (used after succesfull validation)
+const inputFieldRemoveShadow = function(fields) {
+  fields.forEach(function(inputField) {
+    inputField.classList.remove("form__input--valid");
+    inputField.classList.remove("form__input--invalid");
+  });
+};
 
 // Personal Data Form - repeat password validator
 const repeatPassword = document.getElementById("repeat-password");
+const password = document.getElementById("password");
 const passwordRepeatCheck = function() {
-  const password = document.getElementById("password");
   if (password.value != repeatPassword.value) {
     repeatPassword.setCustomValidity("Passwords don't match!");
   } else {
@@ -215,6 +268,160 @@ const passwordRepeatCheck = function() {
   }
 };
 repeatPassword.addEventListener("keyup", passwordRepeatCheck);
+password.addEventListener("keyup", passwordRepeatCheck);
+
+/* Submiting the Personal Data form. Function checks validation of each input field. 
+After validation it displays proper line notification. */
+document
+  .querySelector(".personal-data__personal-data-form")
+  .addEventListener("submit", function(event) {
+    let message = "Error:";
+    let isInputValidate = true;
+    let isFormValidate = true;
+    const personalDataInputs = document.querySelectorAll(
+      ".general-information__form-field .js--form-input"
+    );
+
+    // Checking validation of each input field
+    personalDataInputs.forEach(function(input) {
+      input.checkValidity();
+      if (!input.checkValidity()) {
+        isFormValidate = false;
+        isInputValidate = false;
+      }
+    });
+    if (isInputValidate === false) {
+      message +=
+        "<br><br>" + "Please fill or correct the fields with red outline";
+    }
+    if (password.value != repeatPassword.value) {
+      message += "<br><br>" + "Passwords don't match!";
+    }
+
+    // Displaying positive notification with message
+    const formInvalid = function() {
+      event.preventDefault();
+      lineNotificationMessage(message, "negative");
+      inputFieldshadow(personalDataInputs);
+    };
+
+    // Displaying negative notification with message
+    const formValid = function() {
+      event.preventDefault();
+      lineNotificationMessage("Form sent successfully", "positive");
+      inputFieldRemoveShadow(personalDataInputs);
+    };
+
+    return !isFormValidate ? formInvalid() : formValid();
+  });
+
+/* Function changes styles for "select" fields if option has been chosen. 
+Before that, content of select field looks like placeholder. */
+document
+  .querySelectorAll(".form__input--select")
+  .forEach(function(inputSelect) {
+    inputSelect.addEventListener("click", function(event) {
+      if (event.target.value != "") {
+        inputSelect.classList.add("select--selected");
+      }
+    });
+  });
+
+//  Opening ADD BANNERS popup
+const addBannersOverlay = document.querySelector(".add-banners-overlay");
+
+document
+  .querySelectorAll(".section-with-banners__add-new-button button")
+  .forEach(function(button) {
+    button.addEventListener("click", function() {
+      addBannersOverlay.classList.remove("add-banners-overlay--hidden");
+    });
+  });
+
+// Closing ADD BANNERS popup
+const closeAddBanners = function() {
+  addBannersOverlay.classList.add("add-banners-overlay--hidden");
+};
+document
+  .querySelector(".add-banners-overlay .close-button-icon")
+  .addEventListener("click", function() {
+    closeAddBanners();
+  });
+
+/* Submiting the Add Banners form. Function checks validation of each input text field, 
+each select and required number of checked checkboxes . 
+After validation it displays proper line notification. */
+document
+  .querySelector(".add-banners__add-banners-form")
+  .addEventListener("submit", function(event) {
+    let isSelectValidate = true;
+    let isFormValidate = true;
+    let message = "Error:";
+    const addBannersTextInputs = document.querySelectorAll(
+      ".add-banners__add-banners-form .js--form-input"
+    );
+    const addBannersSelects = document.querySelectorAll(
+      ".add-banners__add-banners-form .js--form-select"
+    );
+    const bannersCheckbox = document.querySelectorAll(
+      ".add-banners__add-banners-form .js--banners-checkbox:checked"
+    );
+    const websitesCheckbox = document.querySelectorAll(
+      ".add-banners__add-banners-form .js--websites-checkbox:checked"
+    );
+
+    // Checking validity of input text fields and prepares right message to display
+    addBannersTextInputs.forEach(function(input) {
+      input.checkValidity();
+      if (!input.checkValidity()) {
+        isFormValidate = false;
+        message +=
+          "<br><br>" + "Please fill or correct the fields with red outline";
+      }
+    });
+
+    // Checking validity of select fields
+    addBannersSelects.forEach(function(select) {
+      select.checkValidity();
+      if (!select.checkValidity()) {
+        isFormValidate = false;
+        isSelectValidate = false;
+      }
+    });
+
+    // Preparing messages to display according to what errors occurs
+    if (isSelectValidate === false) {
+      message +=
+        "<br><br>" + "Please select one option from lists with red outline";
+    }
+    if (bannersCheckbox.length < 2) {
+      isFormValidate = false;
+      message += "<br><br>" + "You have to choose at least 2 banners";
+    }
+    if (websitesCheckbox.length < 2) {
+      isFormValidate = false;
+      message += "<br><br>" + "You have to choose at least 2 websites";
+    }
+
+    // Displaying positive notification with message
+    const formInvalid = function() {
+      event.preventDefault();
+      lineNotificationMessage(message, "negative");
+      inputFieldshadow(addBannersTextInputs);
+      inputFieldshadow(addBannersSelects);
+    };
+
+    // Displaying negative notification with message
+    const formValid = function() {
+      event.preventDefault();
+      lineNotificationMessage("Form sent successfully", "positive");
+      closeAddBanners();
+      inputFieldRemoveShadow(addBannersTextInputs);
+      inputFieldRemoveShadow(addBannersSelects);
+    };
+
+    return !isFormValidate ? formInvalid() : formValid();
+  });
 
 // -- GENERAL STATISTIC CHART ------------------------------------------------------------
 

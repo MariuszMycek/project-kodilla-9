@@ -50,7 +50,7 @@
         }
     }
     &:active {
-        @include breakpoint(tablet-md) {
+        @include breakpoint(md) {
             color: $link-hover;
         }
         @include breakpoint(sm) {

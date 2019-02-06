@@ -1,11 +1,97 @@
+select {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+
 .form__label {
     @extend .line-header;
 }
-.form__input[type="text"],
-.form__input[type="password"],
-.form__input[type="number"],
-.form__input[type="email"],
-.form__input[type="tel"] {
+.form-checkbox-wrapper {
+    // padding-right: 5px;
+    justify-content: space-between;
+    &:nth-child(odd) {
+        background-color: #f2f2f2;
+        @include breakpoint(xl) {
+            background-color: transparent;
+        }
+    }
+    @include breakpoint(xl) {
+        padding-right: 15px;
+    }
+    &:hover {
+        .form__checkbox-right-icon i {
+            visibility: visible;
+        }
+        & > * {
+            @include breakpoint(xl) {
+                background-color: #f2f2f2;
+            }
+        }
+    }
+    .form__checkbox-right-icon i {
+        cursor: pointer;
+        padding: 10px;
+        visibility: visible;
+        @include breakpoint(xl) {
+            visibility: hidden;
+        }
+    }
+}
+.form__checkbox-label {
+    display: flex;
+    align-items: center;
+    padding-left: 46px;
+    color: #333;
+    font-size: 14px;
+    position: relative;
+    height: 42px;
+    cursor: pointer;
+    @include transition;
+    input[type="checkbox"] {
+        position: absolute;
+        left: 13px;
+        top: 11px;
+        margin: 0;
+        width: 19px;
+        height: 19px;
+        opacity: 0;
+         + .checkbox-label__icon {
+            position: absolute;
+            display: inline-block;
+            left: 13px;
+            top: 11px;
+            margin: 0;
+            width: 19px;
+            height: 19px;
+            border: $border-grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: $white;
+            .fa-check {
+                font-size: 13px;
+                color: transparent;
+            }
+        }
+        &:checked + .checkbox-label__icon {
+            background: $online-green;
+            border-color: $online-green;
+            .fa-check {
+                color: $white;
+            }
+        }
+    }
+}
+.form__checkbox-right-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    @include transition;
+}
+.form__input {
     padding: 11px 13px;
     color: $paragraph-color;
     font-size: $paragraph-font-size;
@@ -27,18 +113,35 @@
         font-weight: $font-light;
     }
 }
-.form__input--valid[type="text"],
-.form__input--valid[type="password"],
-.form__input--valid[type="number"],
-.form__input--valid[type="email"],
-.form__input--valid[type="tel"] {
+.form__input--select {
+    padding: 11px 30px 11px 13px;
+    background-image: url("/assets/images/down-arrow.png");
+    background-size: 15px auto;
+    background-repeat: no-repeat;
+    background-position: right 7px center;
+    color: $header-font;
+    font-size: 12px;
+    font-weight: $font-light;
+    line-height: 16px;
+    cursor: pointer;
+    option {
+        color: $paragraph-color;
+        font-size: $paragraph-font-size;
+        font-weight: $font-regular;
+    }
+    option:first-child {
+        display: none;
+    }
+}
+.select--selected {
+    color: $paragraph-color;
+    font-size: $paragraph-font-size;
+    font-weight: $font-regular;
+}
+.form__input--valid {
     box-shadow: 0 0 0 1px #04ae00;
 }
-.form__input--invalid[type="text"],
-.form__input--invalid[type="password"],
-.form__input--invalid[type="number"],
-.form__input--invalid[type="email"],
-.form__input--invalid[type="tel"] {
+.form__input--invalid {
     box-shadow: 0 0 0 1px #f00;
 }
 input[type=number]::-webkit-inner-spin-button,
@@ -55,4 +158,7 @@ input[type=number] {
     color: $header-font;
     font-size: 12px;
     font-weight: $font-light;
+    margin-top: 5px;
 }
+
+

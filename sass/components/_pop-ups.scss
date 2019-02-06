@@ -1,6 +1,6 @@
 .pop-up {
     position: fixed;
-    z-index: 99;
+    z-index: 100;
     top: 0;
     left: 0;
     width: 100%;
@@ -136,3 +136,72 @@
 .log-in-form__password-error--visible {
     display: block;
 }
+.log-in-form__link {
+    display: block;
+    margin-top: 10px;
+    @include breakpoint(sm) {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+.pop-up__line-notification {
+    align-items: center;
+    color: $white;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 1;
+
+    @include breakpoint(sm) {
+        padding: 25px;
+    }
+}
+.hidden-to-the-right {
+    @include breakpoint(sm) {
+        left: 100%;
+    }
+}
+.line-notification--positive {
+    background: $positive-notification-color;
+    &:hover {
+        background: $positive-notification-hover-color;
+    }
+}
+.line-notification--negative {
+    background: $negative-notification-color;
+    &:hover {
+        background: $negative-notification-hover-color;
+    }
+}
+.line-notification--hidden {
+    display: none;
+}
+.line-notification-info-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include breakpoint(sm) {
+        flex-wrap: nowrap;
+    }
+}
+.line-notification__icon {
+    margin-top: 14px;
+    align-self: flex-start;
+    font-size: 15px;
+    @include breakpoint(sm) {
+        text-align: center;
+        padding-left: 10px;
+    }
+}
+
+.line-notification__text {
+    color: $white;
+    font-weight: $font-light;
+    font-size: $paragraph-font-size;
+    margin-left: 10px;
+    @include breakpoint(sm) {
+        // margin-left: 0;
+    }
+}
+

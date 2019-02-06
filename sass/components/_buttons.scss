@@ -36,3 +36,26 @@
 .btn:disabled {
     background-color: $btn-disabled;
 }
+.close-button-wrapper {
+    text-align: right;
+    margin-top: 14px;
+    align-self: flex-start;
+    @include breakpoint(sm) {
+        text-align: left;
+    }
+}
+.close-button-icon {
+    font-size: 12px;
+    cursor: pointer;
+    @include breakpoint(sm) {
+        margin-left: 15px;
+    }
+    &::before {
+        @include transition(0.3s);
+    }
+    &:hover {
+        &::before {
+            transform: rotateZ(180deg);
+        }
+    }
+}

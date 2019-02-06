@@ -1,0 +1,46 @@
+.hamburger-wrapper {
+    position: fixed;
+    z-index: 99;
+    top: 11px;
+    left: 141px;
+    border-radius: 5px;
+    background-color: rgba(19, 19, 19, 0.1);
+    @include breakpoint(sm) {
+        top: 5px;
+        right: 10px;
+        left: auto;
+        font-size: 25px;
+    }
+    @include breakpoint (xl) {
+        left: 8px;
+    }
+}
+// Class used position for positioning hamburger in cooporation with sidebar
+.hamburger-wrapper--short-menu {
+    @include breakpoint (md) {
+        left: 8px;
+    }
+    @include breakpoint (xl) {
+        left: 141px;
+    }
+}
+.hamburger {
+    padding: 10px;
+    cursor: pointer;
+    color: $sidebar-font-color;
+    font-size: 21px;
+    @include transition;
+    &:hover {
+        @include breakpoint(xl) {
+            color: $white;
+        }
+    }
+    &:active {
+        @include breakpoint(md) {
+            color: $white;
+        }
+        @include breakpoint(sm) {
+            color: $white;
+        }
+    }
+}

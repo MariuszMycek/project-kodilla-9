@@ -1,0 +1,61 @@
+.btn {
+    display: inline-block;
+    padding: 11px 20px;
+    cursor: pointer;
+    user-select: none;
+    color: $white;
+    border-radius: 3px;
+    font-size: $btn-font-size;
+    font-weight: $font-light;
+    outline: none;
+    border: none;
+    @include transition;
+}
+.btn--primary {
+    background-color: $btn-primary;
+    &:hover {
+        @include breakpoint(xl) {
+            background-color: $btn-primary-hover;
+        }
+    }
+    &:active {
+        background-color: $btn-primary-hover;
+    }
+}
+.btn--secondary {
+    background-color: $btn-secondary;
+    &:hover {
+        @include breakpoint(xl) {
+            background-color: $btn-secondary-hover;
+        }
+    }
+    &:active {
+        background-color: $btn-secondary-hover;
+    }
+}
+.btn:disabled {
+    background-color: $btn-disabled;
+}
+.close-button-wrapper {
+    text-align: right;
+    margin-top: 14px;
+    align-self: flex-start;
+    @include breakpoint(sm) {
+        text-align: left;
+    }
+}
+.close-button-icon {
+    font-size: 12px;
+    cursor: pointer;
+    @include breakpoint(sm) {
+        margin-left: 15px;
+    }
+    &::before {
+        @include transition(0.3s);
+    }
+    &:hover {
+        &::before {
+            transform: rotateZ(180deg);
+        }
+    }
+}
